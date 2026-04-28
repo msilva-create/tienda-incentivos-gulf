@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Incentivos GULF | Vende y Gana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --gulf-blue: #002F6C;
+        --gulf-orange: #FF6A00;
+        --gulf-white: #FFFFFF;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--gulf-white);
+        color: #1E293B;
+      }
+      .gulf-blue { background-color: var(--gulf-blue); }
+      .text-gulf-blue { color: var(--gulf-blue); }
+      .gulf-orange { background-color: var(--gulf-orange); }
+      .text-gulf-orange { color: var(--gulf-orange); }
+      .border-gulf-orange { border-color: var(--gulf-orange); }
+      
+      .racing-stripe-header {
+        height: 8px;
+        background: linear-gradient(90deg, var(--gulf-blue) 0%, var(--gulf-blue) 48%, #fff 48%, #fff 52%, var(--gulf-orange) 52%, var(--gulf-orange) 100%);
+      }
+
+      .gulf-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid #F1F5F9;
+      }
+      .gulf-card:hover {
+        border-color: var(--gulf-orange);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .btn-gulf {
+        background-color: var(--gulf-orange);
+        color: white;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: all 0.2s;
+      }
+      .btn-gulf:hover {
+        background-color: #E66000;
+        transform: scale(1.02);
+      }
+      .btn-gulf:active {
+        transform: scale(0.98);
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: var(--gulf-blue); border-radius: 10px; }
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-gulf {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+        "recharts": "https://esm.sh/recharts@^3.7.0",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
