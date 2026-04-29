@@ -21,7 +21,6 @@ const COMERCIALES_CORREOS: Record<string, string> = {
   'SERVITECAS': 'cblanco@prolub.com.co',
   'PRUEBA': 'msilva@prolub.com.co'
 };
-
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [view, setView] = useState<'catalog' | 'redeemed'>('catalog');
