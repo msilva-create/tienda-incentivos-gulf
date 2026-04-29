@@ -58,3 +58,15 @@ function App() {
           </button>
         </div>
       </nav>
+      <main className="p-6">
+        <Catalog
+          products={CATALOG_PRODUCTS}
+          userPoints={user.balance}
+          onRedeem={handleRedeem}
+        />
+      </main>
+    </div>
+  );
+}
+
+export default App;
