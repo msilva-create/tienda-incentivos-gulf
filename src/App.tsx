@@ -1,72 +1,65 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { LogOut } from 'lucide-react';
-import { CATALOG_PRODUCTS } from './constants';
-import { User } from './types';
-import Login from './components/Login';
-import Catalog from './components/Catalog';
 
-function App() {
-  const [user, setUser] = useState<User | null>(null);
-
-  const handleRedeem = async (product: any, details: any) => {
-    if (!user) return;
-    const emailData = {
-      to_email: 'msilva@prolub.com.co',
-      user_name: user.name,
-      distributor: user.distributor,
-      product_name: product.name,
-      points: product.price.toLocaleString(),
-      receiver_name: details.receiverName,
-      phone: details.phone,
-      city: details.city,
-      address: details.address
-    };
-    try {
-      await emailjs.send(
-        'service_x7n514r',
-        'template_zaf2ohc',
-        emailData,
-        'gM5-A17C2kxFykMOL'
-      );
-      alert('¡Redención exitosa!');
-      setUser({ ...user, balance: user.balance - product.price });
-    } catch (error) {
-      console.error(error);
-      alert('Error técnico al enviar el pedido.');
-    }
-  };
-
-  if (!user) {
-    return <Login onLogin={setUser} />;
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-[#001e62] text-white p-4 flex justify-between items-center border-b-4 border-[#ff4f00] shadow-lg">
-        <img src="https://i.postimg.cc/ZnLGKtsg/Logo-GULF-2.png" alt="Gulf" className="h-10" />
-        <div className="flex items-center gap-4">
-          <div className="text-right">
-            <p className="text-xs opacity-80 uppercase">{user.name}</p>
-            <p className="font-bold text-[#ff4f00]">{user.balance.toLocaleString()} PTS</p>
-          </div>
-          <button
-            onClick={() => setUser(null)}
-            className="p-2 bg-red-600 rounded-full hover:bg-red-700 transition"
-          >
-            <LogOut size={18} />
-          </button>
-        </div>
-      </nav>
-      <main className="p-6">
-        <Catalog
-          products={CATALOG_PRODUCTS}
-          userPoints={user.balance}
-          onRedeem={handleRedeem}
-        />
-      </main>
-    </div>
-  );
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
 }
 
-export default App;
+interface CatalogProps {
+  products: Product[];
+  userPoints: number;
+  onRedeem: (product: Product, details: any) => void;
+}
+
+const Catalog: React.FC<CatalogProps> = ({ products, userPoints, onRedeem }) => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [form, setForm] = useState({ receiverName: '', phone: '', city: '', address: '' });
+
+  const handleFinalize = () => {
+    if (!form.receiverName || !form.phone || !form.city || !form.address) {
+      alert('Por favor, completa todos los campos de envio');
+      return;
+    }
+    onRedeem(selectedProduct!, form);
+    setSelectedProduct(null);
+  };
+
+  return (
+    <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {products.map((product) => (
+        <div key={product.id} className="bg-white p-4 rounded-xl shadow-md border flex flex-col items-center">
+          <img src={product.image} alt={product.name} className="h-32 object-contain mb-4" />
+          <h3 className="font-bold text-[#002F6C] text-center text-sm h-10">{product.name}</h3>
+          <p className="text-[#FF6A00] font-black my-2">{product.price.toLocaleString()} PTS</p>
+          <button
+            onClick={() => setSelectedProduct(product)}
+            disabled={userPoints < product.price}
+            className={`w-full py-2 rounded-lg font-bold text-white ${userPoints >= product.price ? 'bg-[#002F6C]' : 'bg-gray-300'}`}
+          >
+            {userPoints >= product.price ? 'REDIMIR' : 'PUNTOS INSUFICIENTES'}
+          </button>
+        </div>
+      ))}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-[100]">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold text-[#002F6C] mb-4">DATOS DE ENVIO</h2>
+            <div className="space-y-3">
+              <input className="w-full border p-3 rounded-xl" placeholder="Nombre de quien recibe" onChange={e => setForm({...form, receiverName: e.target.value})} />
+              <input className="w-full border p-3 rounded-xl" placeholder="Telefono" onChange={e => setForm({...form, phone: e.target.value})} />
+              <input className="w-full border p-3 rounded-xl" placeholder="Ciudad" onChange={e => setForm({...form, city: e.target.value})} />
+              <input className="w-full border p-3 rounded-xl" placeholder="Direccion completa" onChange={e => setForm({...form, address: e.target.value})} />
+              <button onClick={handleFinalize} className="w-full bg-[#FF6A00] text-white py-4 rounded-xl font-bold mt-4">FINALIZAR</button>
+              <button onClick={() => setSelectedProduct(null)} className="w-full text-gray-500 py-2">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Catalog;
