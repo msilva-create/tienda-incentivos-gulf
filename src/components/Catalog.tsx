@@ -65,7 +65,6 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
         return;
       }
 
-      // 1. Datos para EmailJS
       const shippingDetails = {
         receiverName: deliveryData.recipientName,
         contactName: deliveryData.contactName,
@@ -75,9 +74,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
         reference: deliveryData.reference || 'N/A'
       };
 
-      // 2. Llamada a la función de App.tsx (EmailJS)
       onRedeem(confirmingProduct, shippingDetails);
-
       setOrderSuccess(true);
       
       setTimeout(() => {
@@ -85,20 +82,12 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
         setConfirmingProduct(null);
         setShowDeliveryForm(false);
         setDeliveryData({
-          recipientName: '',
-          contactName: '',
-          phone: '',
-          email: user.email,
-          city: '',
-          address: '',
-          reference: '',
-          observations: ''
+          recipientName: '', contactName: '', phone: '', email: user.email,
+          city: '', address: '', reference: '', observations: ''
         });
       }, 3000);
     }
   };
-
-  const isCommercial = user.role === 'COMMERCIAL';
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -118,7 +107,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                     <CheckCircle2 size={40} />
                   </div>
                   <h3 className="text-2xl font-black text-[#002F6C] uppercase italic">¡Pedido Enviado!</h3>
-                  <p className="text-slate-500 text-sm font-bold">REVISA TU CORREO PARA VER LA CONFIRMACIÓN CON EL LOGO GULF.</p>
+                  <p className="text-slate-500 text-sm font-bold">REVISA TU CORREO PARA EL LOGO GULF.</p>
                 </div>
               ) : (
                 <>
@@ -128,7 +117,6 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                     </h3>
                     <button onClick={() => setConfirmingProduct(null)}><X size={24} /></button>
                   </div>
-                  
                   {!showDeliveryForm ? (
                     <div className="space-y-6">
                       <div className="bg-slate-50 p-4 rounded-2xl">
@@ -144,7 +132,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                       <input className="w-full p-3 border rounded-xl" placeholder="CELULAR" value={deliveryData.phone} onChange={(e)=>setDeliveryData({...deliveryData, phone: e.target.value})} />
                       <input className="w-full p-3 border rounded-xl" placeholder="CIUDAD" value={deliveryData.city} onChange={(e)=>setDeliveryData({...deliveryData, city: e.target.value})} />
                       <input className="w-full p-3 border rounded-xl" placeholder="DIRECCIÓN" value={deliveryData.address} onChange={(e)=>setDeliveryData({...deliveryData, address: e.target.value})} />
-                      <button onClick={confirmRedemption} className="w-full py-4 rounded-2xl bg-[#002F6C] text-white font-bold uppercase">Finalizar Pedido</button>
+                      <button onClick={confirmRedemption} className="w-full py-4 rounded-2xl bg-[#002F6C] text-white font-bold uppercase">Finalizar</button>
                     </div>
                   )}
                 </>
@@ -154,29 +142,21 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
         </div>
       )}
 
-      {/* Header */}
       <div className="bg-[#002F6C] rounded-[2rem] p-8 text-white flex flex-col md:flex-row justify-between items-center gap-6 border-b-8 border-[#FF6A00]">
-        <div>
-          <h2 className="text-4xl font-black italic">CATÁLOGO GULF</h2>
-          <p className="text-orange-400 font-bold uppercase tracking-widest">Premios exclusivos para ti</p>
-        </div>
+        <h2 className="text-4xl font-black italic">CATÁLOGO GULF</h2>
         <div className="bg-white/10 p-4 rounded-2xl text-center min-w-[200px]">
-          <p className="text-xs uppercase">Tu Saldo</p>
           <p className="text-2xl font-black">{formatCurrency(user.balance)}</p>
         </div>
       </div>
 
-      {/* Grid de Productos Simplificado */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredProducts.map(product => (
           <div key={product.id} className="bg-white rounded-[2rem] p-6 shadow-md flex flex-col justify-between">
-            <div>
-              <div className="h-40 flex items-center justify-center mb-4">
-                <img src={product.image} alt={product.name} className="max-h-full object-contain" />
-              </div>
-              <h4 className="font-bold text-[#002F6C] uppercase text-sm mb-2">{product.name}</h4>
-              <p className="text-[#FF6A00] font-black italic">{formatCurrency(product.price)}</p>
+            <div className="h-40 flex items-center justify-center mb-4">
+              <img src={product.image} alt={product.name} className="max-h-full object-contain" />
             </div>
+            <h4 className="font-bold text-[#002F6C] uppercase text-sm mb-2">{product.name}</h4>
+            <p className="text-[#FF6A00] font-black italic">{formatCurrency(product.price)}</p>
             <button onClick={() => setConfirmingProduct(product)} className="mt-4 w-full py-3 bg-[#002F6C] text-white rounded-xl font-bold uppercase text-xs">Redimir</button>
           </div>
         ))}
