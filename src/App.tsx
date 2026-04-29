@@ -21,6 +21,7 @@ const COMERCIALES_CORREOS: Record<string, string> = {
   'SERVITECAS': 'cblanco@prolub.com.co',
   'PRUEBA': 'msilva@prolub.com.co'
 };
+
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [view, setView] = useState<'catalog' | 'redeemed'>('catalog');
@@ -95,14 +96,12 @@ function App() {
             <button 
               onClick={() => setView('catalog')} 
               className={`p-2 rounded-full transition ${view === 'catalog' ? 'bg-[#ff4f00]' : 'hover:bg-blue-800'}`}
-              title="Catálogo"
             >
               <ShoppingCart size={20} />
             </button>
             <button 
               onClick={() => setView('redeemed')} 
               className={`p-2 rounded-full transition ${view === 'redeemed' ? 'bg-[#ff4f00]' : 'hover:bg-blue-800'}`}
-              title="Mis Pedidos"
             >
               <Package size={20} />
             </button>
