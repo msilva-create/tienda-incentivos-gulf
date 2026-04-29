@@ -24,10 +24,4 @@ const Catalog: React.FC<CatalogProps> = ({ products, userPoints, onRedeem }) => 
       return;
     }
     onRedeem(selectedProduct!, form);
-    setSelectedProduct(null);
-  };
-
-  return (
-    <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-      {products.map((product) => (
-        <div key={product.id} className="bg-white p-4 rounded-xl shadow-md border flex flex-col items-center">
+    setSe
