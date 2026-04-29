@@ -18,7 +18,7 @@ const COMERCIALES_CORREOS: Record<string, string> = {
   'DISTRIBUIDORA LOS LAGOS': 'cblanco@prolub.com.co',
   'GRUPO MOTOR': 'oramirez@prolub.com.co',
   'RAMOS DISTRIBUCIONES': 'grodriguez@prolub.com.co',
-  'SERVITECAS': 'cblanco@prolub.com.co', // <-- Aquí faltaba esta coma
+  'SERVITECAS': 'cblanco@prolub.com.co',
   'PRUEBA': 'msilva@prolub.com.co'
 };
 
