@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { ShoppingCart, LogOut, Package, User as UserIcon, Send } from 'lucide-react';
+import { ShoppingCart, LogOut, Package, User as UserIcon } from 'lucide-react';
 import { RAW_USERS } from './users';
 import { PRODUCTS } from './constants';
 import { User, Product, OrderDetails } from './types';
 import Login from './Login';
 import Catalog from './Catalog';
-import Dashboard from './Dashboard';
-import Wishlist from './Wishlist';
 import Redeemed from './Redeemed';
 import RedemptionComprobante from './RedemptionComprobante';
 
-// --- CONFIGURACIÓN DE ENVÍO ---
+// --- CONFIGURACIÓN DE COMERCIALES POR DISTRIBUIDOR ---
 const COMERCIALES_CORREOS: Record<string, string> = {
   'LUBRICAFE': 'grodriguez@prolub.com.co',
   'MAQUINAGRO': 'cblanco@prolub.com.co',
@@ -25,8 +23,7 @@ const COMERCIALES_CORREOS: Record<string, string> = {
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
-  const [view, setView] = useState<'catalog' | 'dashboard' | 'wishlist' | 'redeemed'>('catalog');
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [view, setView] = useState<'catalog' | 'redeemed'>('catalog');
   const [showComprobante, setShowComprobante] = useState(false);
   const [lastOrder, setLastOrder] = useState<any>(null);
 
@@ -39,7 +36,7 @@ function App() {
   const handleRedeem = async (product: Product, details: OrderDetails) => {
     if (!user) return;
 
-    // 1. Preparar datos para EmailJS
+    // 1. Preparamos los datos EXACTOS para tu plantilla de EmailJS
     const emailData = {
       to_email: COMERCIALES_CORREOS[user.distributor] || 'msilva@prolub.com.co',
       user_name: user.name,
@@ -55,7 +52,7 @@ function App() {
     };
 
     try {
-      // 2. Enviar Correo
+      // 2. ENVIAR USANDO TUS CREDENCIALES (Sin scripts viejos)
       await emailjs.send(
         'service_x7n514r', 
         'template_zaf2ohc', 
@@ -63,7 +60,7 @@ function App() {
         'gM5-A17C2kxFykMOL'
       );
 
-      // 3. Actualizar estado local
+      // 3. Generar el comprobante visual para el vendedor
       const newOrder = {
         ...details,
         id: Math.random().toString(36).substr(2, 9).toUpperCase(),
@@ -78,7 +75,7 @@ function App() {
       
     } catch (error) {
       console.error('Error al enviar pedido:', error);
-      alert('Hubo un error al procesar el pedido. Intenta de nuevo.');
+      alert('Error técnico al enviar el pedido. Por favor verifica tu conexión.');
     }
   };
 
@@ -86,40 +83,22 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-[#001e62] text-white p-4 sticky top-0 z-50 shadow-lg">
-        <div className="max-width-6xl mx-auto flex justify-between items-center">
+      {/* NAVBAR PROFESIONAL GULF */}
+      <nav className="bg-[#001e62] text-white p-4 sticky top-0 z-50 shadow-lg border-b-4 border-[#ff4f00]">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <img src="https://i.postimg.cc/ZnLGKtsg/Logo-GULF-2.png" alt="Gulf" className="h-10" />
-            <span className="hidden md:inline font-bold">Programa de Incentivos</span>
+            <img src="https://i.postimg.cc/ZnLGKtsg/Logo-GULF-2.png" alt="Gulf Logo" className="h-10" />
+            <span className="hidden md:inline font-bold tracking-wider">TIENDA DE INCENTIVOS</span>
           </div>
           
           <div className="flex items-center gap-6">
             <div className="text-right">
-              <p className="text-xs opacity-80">{user.name}</p>
-              <p className="font-bold text-orange-400">{user.points.toLocaleString()} pts</p>
+              <p className="text-xs opacity-80 uppercase tracking-tighter">{user.name}</p>
+              <p className="font-bold text-[#ff4f00]">{user.points.toLocaleString()} PTS</p>
             </div>
-            <button onClick={() => setView('catalog')} className="hover:text-orange-400"><ShoppingCart size={20} /></button>
-            <button onClick={() => setView('redeemed')} className="hover:text-orange-400"><Package size={20} /></button>
-            <button onClick={() => setUser(null)} className="hover:text-red-400"><LogOut size={20} /></button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Vistas */}
-      <main className="max-w-6xl mx-auto p-6">
-        {view === 'catalog' && <Catalog products={PRODUCTS} userPoints={user.points} onRedeem={handleRedeem} />}
-        {view === 'redeemed' && <Redeemed user={user} />}
-      </main>
-
-      {showComprobante && lastOrder && (
-        <RedemptionComprobante 
-          order={lastOrder} 
-          onClose={() => { setShowComprobante(false); setView('catalog'); }} 
-        />
-      )}
-    </div>
-  );
-}
-
-export default App;
+            <button 
+              onClick={() => setView('catalog')} 
+              className={`p-2 rounded-full transition ${view === 'catalog' ? 'bg-[#ff4f00]' : 'hover:bg-blue-800'}`}
+              title="Catálogo"
+            >
+              <ShoppingCart size={2
