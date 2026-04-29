@@ -19,6 +19,7 @@ const COMERCIALES_CORREOS: Record<string, string> = {
   'GRUPO MOTOR': 'oramirez@prolub.com.co',
   'RAMOS DISTRIBUCIONES': 'grodriguez@prolub.com.co',
   'SERVITECAS': 'cblanco@prolub.com.co'
+  'PRUEBA': 'msilva@prolub.com.co'
 };
 
 function App() {
