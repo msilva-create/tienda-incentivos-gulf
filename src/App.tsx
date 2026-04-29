@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { LogOut } from 'lucide-react';
 import { RAW_USERS } from './users';
-import { PRODUCTS } from './constants';
+import { CATALOG_PRODUCTS } from './constants';
 import Login from './components/Login';
 import Catalog from './components/Catalog';
 
@@ -20,7 +20,6 @@ function App() {
 
   const handleRedeem = async (product: any, details: any) => {
     if (!user) return;
-
     const emailData = {
       to_email: 'msilva@prolub.com.co',
       user_name: user.name,
@@ -32,7 +31,6 @@ function App() {
       city: details.city,
       address: details.address
     };
-
     try {
       await emailjs.send(
         'service_x7n514r',
@@ -40,8 +38,8 @@ function App() {
         emailData,
         'gM5-A17C2kxFykMOL'
       );
-      alert('¡Redención exitosa! El correo con el logo Gulf ha sido enviado.');
-      setUser({ ...user, points: user.points - product.price });
+      alert('¡Redención exitosa!');
+      setUser({ ...user, balance: user.balance - product.price });
     } catch (error) {
       console.error(error);
       alert('Error técnico al enviar el pedido.');
@@ -59,10 +57,10 @@ function App() {
         <div className="flex items-center gap-4">
           <div className="text-right">
             <p className="text-xs opacity-80 uppercase">{user.name}</p>
-            <p className="font-bold text-[#ff4f00]">{user.points.toLocaleString()} PTS</p>
+            <p className="font-bold text-[#ff4f00]">{user.balance.toLocaleString()} PTS</p>
           </div>
-          <button 
-            onClick={() => setUser(null)} 
+          <button
+            onClick={() => setUser(null)}
             className="p-2 bg-red-600 rounded-full hover:bg-red-700 transition"
           >
             <LogOut size={18} />
@@ -70,10 +68,10 @@ function App() {
         </div>
       </nav>
       <main className="p-6">
-        <Catalog 
-          products={PRODUCTS} 
-          userPoints={user.points} 
-          onRedeem={handleRedeem} 
+        <Catalog
+          products={CATALOG_PRODUCTS}
+          userPoints={user.balance}
+          onRedeem={handleRedeem}
         />
       </main>
     </div>
