@@ -18,7 +18,7 @@ const COMERCIALES_CORREOS: Record<string, string> = {
   'DISTRIBUIDORA LOS LAGOS': 'cblanco@prolub.com.co',
   'GRUPO MOTOR': 'oramirez@prolub.com.co',
   'RAMOS DISTRIBUCIONES': 'grodriguez@prolub.com.co',
-  'SERVITECAS': 'cblanco@prolub.com.co'
+  'SERVITECAS': 'cblanco@prolub.com.co', // <-- Aquí faltaba esta coma
   'PRUEBA': 'msilva@prolub.com.co'
 };
 
@@ -37,7 +37,6 @@ function App() {
   const handleRedeem = async (product: Product, details: OrderDetails) => {
     if (!user) return;
 
-    // 1. Preparamos los datos EXACTOS para tu plantilla de EmailJS
     const emailData = {
       to_email: COMERCIALES_CORREOS[user.distributor] || 'msilva@prolub.com.co',
       user_name: user.name,
@@ -53,7 +52,6 @@ function App() {
     };
 
     try {
-      // 2. ENVIAR USANDO TUS CREDENCIALES (Sin scripts viejos)
       await emailjs.send(
         'service_x7n514r', 
         'template_zaf2ohc', 
@@ -61,7 +59,6 @@ function App() {
         'gM5-A17C2kxFykMOL'
       );
 
-      // 3. Generar el comprobante visual para el vendedor
       const newOrder = {
         ...details,
         id: Math.random().toString(36).substr(2, 9).toUpperCase(),
@@ -76,7 +73,7 @@ function App() {
       
     } catch (error) {
       console.error('Error al enviar pedido:', error);
-      alert('Error técnico al enviar el pedido. Por favor verifica tu conexión.');
+      alert('Error técnico al enviar el pedido.');
     }
   };
 
@@ -84,7 +81,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* NAVBAR PROFESIONAL GULF */}
       <nav className="bg-[#001e62] text-white p-4 sticky top-0 z-50 shadow-lg border-b-4 border-[#ff4f00]">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -102,4 +98,35 @@ function App() {
               className={`p-2 rounded-full transition ${view === 'catalog' ? 'bg-[#ff4f00]' : 'hover:bg-blue-800'}`}
               title="Catálogo"
             >
-              <ShoppingCart size={2
+              <ShoppingCart size={20} />
+            </button>
+            <button 
+              onClick={() => setView('redeemed')} 
+              className={`p-2 rounded-full transition ${view === 'redeemed' ? 'bg-[#ff4f00]' : 'hover:bg-blue-800'}`}
+              title="Mis Pedidos"
+            >
+              <Package size={20} />
+            </button>
+            <button onClick={() => setUser(null)} className="p-2 rounded-full hover:bg-red-600 transition">
+              <LogOut size={20} />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-6xl mx-auto p-6">
+        {view === 'catalog' && <Catalog products={PRODUCTS} userPoints={user.points} onRedeem={handleRedeem} />}
+        {view === 'redeemed' && <Redeemed user={user} />}
+      </main>
+
+      {showComprobante && lastOrder && (
+        <RedemptionComprobante 
+          order={lastOrder} 
+          onClose={() => { setShowComprobante(false); setView('catalog'); }} 
+        />
+      )}
+    </div>
+  );
+}
+
+export default App;
