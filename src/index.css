@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gulf-blue: #002F6C;
+  --gulf-orange: #FF6A00;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+  color: #1E293B;
+}
+
+.racing-stripe-header {
+  height: 8px;
+  background: linear-gradient(90deg, #002F6C 0%, #002F6C 48%, #fff 48%, #fff 52%, #FF6A00 52%, #FF6A00 100%);
+}
+
+.gulf-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #F1F5F9;
+}
+
+.gulf-card:hover {
+  border-color: #FF6A00;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.btn-gulf {
+  background-color: #FF6A00;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+}
+
+.btn-gulf:hover {
+  background-color: #E66000;
+  transform: scale(1.02);
+}
+
+.btn-gulf:active {
+  transform: scale(0.98);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #002F6C; border-radius: 10px; }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-gulf {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
