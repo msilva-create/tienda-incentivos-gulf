@@ -3,8 +3,7 @@ import emailjs from '@emailjs/browser';
 import { LogOut } from 'lucide-react';
 import { RAW_USERS } from './users';
 import { PRODUCTS } from './constants';
-// Aquí estaban los errores de las rutas, ya están corregidos:
-import Login from './components/Login'; 
+import Login from './components/Login';
 import Catalog from './components/Catalog';
 
 function App() {
