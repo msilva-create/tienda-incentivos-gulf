@@ -9,11 +9,12 @@
     "preview": "vite preview",
     "lint": "tsc --noEmit"
   },
-  "dependencies": {
-    "react-dom": "^19.2.4",
-    "lucide-react": "^0.563.0",
-    "recharts": "^3.7.0",
-    "react": "^19.2.4"
+ "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+    // ... otras librerías que ya tengas
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
