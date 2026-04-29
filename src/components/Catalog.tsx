@@ -100,30 +100,45 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
 
   const confirmRedemption = () => {
     if (confirmingProduct) {
-      // Validate form
+      // Validar formulario
       if (!deliveryData.recipientName || !deliveryData.contactName || !deliveryData.phone || !deliveryData.city || !deliveryData.address) {
         alert('Por favor completa todos los campos obligatorios.');
         return;
       }
 
-      const orderId = `ORD-${Date.now()}`;
-      const requestDate = new Date().toISOString();
-      
-      const newOrder = {
-        id: orderId,
-        ...deliveryData,
-        requestDate,
-        distributor: user.distributor,
-        commercial: user.name + (isTestUser ? ' (PRUEBA)' : ''),
-        productName: confirmingProduct.name + (isTestUser ? ' (PRUEBA)' : ''),
-        productId: confirmingProduct.id,
-        userEmail: user.email,
-        quantity: 1,
-        balanceBefore: user.balance,
-        discountedBalance: confirmingProduct.price,
-        finalBalance: user.balance - confirmingProduct.price,
-        status: 'Solicitud recibida'
+      // 1. Creamos el objeto de detalles de envío para EmailJS
+      const shippingDetails = {
+        receiverName: deliveryData.recipientName,
+        contactName: deliveryData.contactName,
+        phone: deliveryData.phone,
+        city: deliveryData.city,
+        address: deliveryData.address,
+        reference: deliveryData.reference
       };
+
+      // 2. DISPARAMOS EL ENVÍO PROFESIONAL (onRedeem llama a EmailJS en App.tsx)
+      onRedeem(confirmingProduct, shippingDetails); 
+
+      // 3. Mostramos éxito en pantalla
+      setOrderSuccess(true);
+      
+      setTimeout(() => {
+        setOrderSuccess(false);
+        setConfirmingProduct(null);
+        setShowDeliveryForm(false);
+        setDeliveryData({
+          recipientName: '',
+          contactName: '',
+          phone: '',
+          email: user.email,
+          city: '',
+          address: '',
+          reference: '',
+          observations: ''
+        });
+      }, 3000);
+    }
+  };
 
       onCreateOrder(newOrder);
       setOrderSuccess(true);
