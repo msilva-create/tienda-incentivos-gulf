@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { LogOut } from 'lucide-react';
-import { RAW_USERS } from './users';
 import { CATALOG_PRODUCTS } from './constants';
+import { User } from './types';
 import Login from './components/Login';
 import Catalog from './components/Catalog';
 
 function App() {
-  const [user, setUser] = useState<any>(null);
-
-  const handleLogin = (email: string, pass: string) => {
-    const found = RAW_USERS.find(u => u.email === email && u.password === pass);
-    if (found) {
-      setUser(found);
-    } else {
-      alert('Credenciales incorrectas');
-    }
-  };
+  const [user, setUser] = useState<User | null>(null);
 
   const handleRedeem = async (product: any, details: any) => {
     if (!user) return;
@@ -47,7 +38,7 @@ function App() {
   };
 
   if (!user) {
-    return <Login onLogin={handleLogin} />;
+    return <Login onLogin={setUser} />;
   }
 
   return (
@@ -67,15 +58,3 @@ function App() {
           </button>
         </div>
       </nav>
-      <main className="p-6">
-        <Catalog
-          products={CATALOG_PRODUCTS}
-          userPoints={user.balance}
-          onRedeem={handleRedeem}
-        />
-      </main>
-    </div>
-  );
-}
-
-export default App;
