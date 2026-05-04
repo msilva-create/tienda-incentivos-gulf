@@ -54,4 +54,9 @@ export const RAW_USERS: User[] = [
 
   // USUARIO DE PRUEBA
   { id: 'test-user', name: 'USUARIO TEST', email: 'msilva@prolub.com.co', password: '0000', distributor: 'PRUEBA', gallons: 0, initialGallons: 0, balance: 9999999, initialBalance: 9999999, role: 'COMMERCIAL', monthlyBalances: {} },
+
+  // CVC SERVITECAS
+{ id: 'sv1', name: 'César Cruz', email: 'cesar@servitecas', password: 'GulfSV01', distributor: 'CVC SERVITECAS', gallons: 1264, initialGallons: 341, balance: 0, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: {} },
+{ id: 'sv2', name: 'Miguel Vargas', email: 'miguel@servitecas', password: 'GulfSV02', distributor: 'CVC SERVITECAS', gallons: 3541, initialGallons: 1281, balance: 2832800, initialBalance: 1024800, role: 'COMMERCIAL', monthlyBalances: {} },
+{ id: 'sv3', name: 'Cesar Moreno', email: 'cesar.moreno@servitecas', password: 'GulfSV03', distributor: 'CVC SERVITECAS', gallons: 64, initialGallons: 32, balance: 0, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: {} },
 ];
