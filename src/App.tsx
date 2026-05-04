@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const [monthlyRecords, setMonthlyRecords] = useState<MonthlyRecord[]>([]);
 
   const DEFAULT_REDEEMED: RedeemedItem[] = [
-    {
+  {
       id: 'R-1773109805069',
       productId: 'R-1773109805069',
       productName: 'Sofá cama',
@@ -30,7 +30,61 @@ const App: React.FC = () => {
       date: '2026-03-10T02:30:05.069Z',
       userEmail: 'samuel@lubricafe',
       distributor: 'LUBRICAFE'
-    }
+    },
+    {
+      id: 'R-lagos-luis-tv-mar',
+      productId: 'te2',
+      productName: 'Televisor 40" LED UHD 4K',
+      price: 1800000,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'luis@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
+    {
+      id: 'R-lagos-dayana-vent-mar',
+      productId: 'e14',
+      productName: 'Ventilador 3 en 1',
+      price: 239880,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'dayana@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
+    {
+      id: 'R-lagos-dayana-sand-mar',
+      productId: 'e8',
+      productName: 'Sanduchera Electrica 2 Puestos',
+      price: 96000,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'dayana@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
+    {
+      id: 'R-lagos-milton-vajilla-mar',
+      productId: 'hm3',
+      productName: 'Juego de vajilla 4 puestos',
+      price: 120000,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'milton@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
+    {
+      id: 'R-lagos-milton-vent-mar',
+      productId: 'e14',
+      productName: 'Ventilador 3 en 1',
+      price: 239880,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'milton@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
+    {
+      id: 'R-lagos-milton-ollas-mar',
+      productId: 'hm4',
+      productName: 'Bateria de ollas',
+      price: 240000,
+      date: '2026-03-15T12:00:00Z',
+      userEmail: 'milton@loslagos',
+      distributor: 'DISTRIBUIDORA LOS LAGOS'
+    },
   ];
 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
