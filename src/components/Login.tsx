@@ -38,7 +38,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       "DISTRIBUIDORA LOS LAGOS",
       "GRUPO MOTOR",
       "RAMOS DISTRIBUCIONES",
-      "PRUEBA"
+      "PRUEBA", "CVC SERVITECAS",
     ];
   }, []);
 
