@@ -99,7 +99,7 @@ const App: React.FC = () => {
     { id: 'default-luz-piedad-jan', userId: 'lc1', userName: 'Luz Piedad', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 814, valuePerGallon: 800, amountLoaded: 651200, redeemed: 0, availableBalance: 651200, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
     { id: 'default-monica-jan', userId: 'lc2', userName: 'Monica', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 984, valuePerGallon: 900, amountLoaded: 885600, redeemed: 0, availableBalance: 885600, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
     { id: 'default-melissa-jan', userId: 'lc3', userName: 'Melissa', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 825, valuePerGallon: 800, amountLoaded: 660000, redeemed: 0, availableBalance: 660000, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
-    { id: 'default-samuel-jan', userId: 'lc4', userName: 'Samuel', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 1682, valuePerGallon: 1000, amountLoaded: 1682000, redeemed: 0, availableBalance: 1682000, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' }
+    { id: 'default-samuel-jan', userId: 'lc4', userName: 'Samuel', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 1682, valuePerGallon: 1000, amountLoaded: 1682000, redeemed: 0, availableBalance: 1682000, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
  {
   id: 'default-samuel-apr',
   userId: 'lc4',
