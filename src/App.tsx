@@ -141,7 +141,8 @@ const App: React.FC = () => {
   availableBalance: 693600,
   observations: 'Carga saldo abril',
   date: '2026-04-30T12:00:00Z'
-} ];
+} 
+  ];
 
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
