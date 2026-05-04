@@ -141,7 +141,7 @@ const App: React.FC = () => {
   availableBalance: 693600,
   observations: 'Carga saldo abril',
   date: '2026-04-30T12:00:00Z'
-} 
+},
 { id: 'default-miguel-jan', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Enero', gallonsSold: 1281, valuePerGallon: 800, amountLoaded: 1024800, redeemed: 0, availableBalance: 1024800, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
 { id: 'default-miguel-feb', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Febrero', gallonsSold: 1219, valuePerGallon: 800, amountLoaded: 975200, redeemed: 0, availableBalance: 975200, observations: 'Carga saldo febrero', date: '2026-02-28T12:00:00Z' },
 { id: 'default-miguel-mar', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Marzo', gallonsSold: 1041, valuePerGallon: 800, amountLoaded: 832800, redeemed: 0, availableBalance: 832800, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' }, 
