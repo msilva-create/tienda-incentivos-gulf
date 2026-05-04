@@ -269,12 +269,26 @@ const App: React.FC = () => {
     };
     setRedeemedItems(prev => [newItem, ...prev]);
 
+    const distributorEmails: Record<string, string> = {
+      'LUBRICAFE': 'grodriguez@prolub.com.co',
+      'MAQUINAGRO': 'cblanco@prolub.com.co',
+      'JAIRO SANCHEZ': 'cblanco@prolub.com.co',
+      'UNIVERSAL': 'oramirez@prolub.com.co',
+      'DISTRIBUIDORA LOS LAGOS': 'cblanco@prolub.com.co',
+      'GRUPO MOTOR': 'oramirez@prolub.com.co',
+      'RAMOS DISTRIBUCIONES': 'grodriguez@prolub.com.co',
+      'CVC SERVITECAS': 'cblanco@prolub.com.co',
+    };
+
+    const commercialEmail = distributorEmails[order.distributor] || 'msilva@prolub.com.co';
+
     try {
       await emailjs.send(
         'service_x7n514r',
         'template_zaf2ohc',
         {
           to_email: 'msilva@prolub.com.co',
+          cc_email: commercialEmail,
           user_name: order.commercial,
           distributor: order.distributor,
           product_name: order.productName,
@@ -292,7 +306,6 @@ const App: React.FC = () => {
       console.warn('Error enviando email:', error);
     }
   };
-
   const handleLogin = (loggedUser: User) => {
     if (loggedUser.role === 'ADMIN' && loggedUser.email !== 'admin.gulf') {
       alert("Acceso no autorizado.");
