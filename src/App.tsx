@@ -186,7 +186,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     setUsers(prevUsers => prevUsers.map(u => {
-      if (u.role === 'ADMIN' || u.distributor === 'JAIRO SANCHEZ' || u.distributor === 'DISTRIBUIDORA LOS LAGOS') return u;
+      if (u.role === 'ADMIN') return u;
       const userRecords = monthlyRecords.filter(r => r.userId === u.id);
       const totalLoaded = userRecords.reduce((sum, r) => sum + r.amountLoaded, 0);
       const userRedemptions = redeemedItems.filter(ri => ri.userEmail === u.email);
