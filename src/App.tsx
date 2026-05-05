@@ -145,8 +145,10 @@ const App: React.FC = () => {
 { id: 'default-miguel-jan', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Enero', gallonsSold: 1281, valuePerGallon: 800, amountLoaded: 1024800, redeemed: 0, availableBalance: 1024800, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
 { id: 'default-miguel-feb', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Febrero', gallonsSold: 1219, valuePerGallon: 800, amountLoaded: 975200, redeemed: 0, availableBalance: 975200, observations: 'Carga saldo febrero', date: '2026-02-28T12:00:00Z' },
 { id: 'default-miguel-mar', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Marzo', gallonsSold: 1041, valuePerGallon: 800, amountLoaded: 832800, redeemed: 0, availableBalance: 832800, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' }, 
- ];
-
+{ id: 'default-giovanni-mar', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 810, valuePerGallon: 800, amountLoaded: 648000, redeemed: 0, availableBalance: 648000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+{ id: 'default-yerlin-mar', userId: 'un5', userName: 'YERLIN MOLINA', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 802, valuePerGallon: 800, amountLoaded: 641600, redeemed: 0, availableBalance: 641600, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+{ id: 'default-zaid-mar', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 1203, valuePerGallon: 1000, amountLoaded: 1203000, redeemed: 0, availableBalance: 1203000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+  ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
   useEffect(() => {
