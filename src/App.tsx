@@ -324,7 +324,7 @@ const App: React.FC = () => {
           <div className="mb-4">
             {/* ✅ LOGO CORREGIDO */}
             <img
-              src="https://i.postimg.cc/SxWkYzGz/Gulf-Oil-logo-svg.png"
+             src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png"
               alt="Gulf Logo"
               style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }}
             />
