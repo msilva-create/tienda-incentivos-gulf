@@ -12,6 +12,8 @@ import { Heart, LayoutDashboard, ShoppingBag, Trophy, UserCircle, ReceiptText } 
 import Redeemed from './components/Redeemed';
 import RedemptionComprobante from './components/RedemptionComprobante';
 
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx2RedpNt2hvEhLZTcqrr4j1ZndFXUG0TXy-SU4GzS12IRdHi8Mko8voB-j9Up9XdOf8w/exec';
+
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [users, setUsers] = useState<User[]>(RAW_USERS);
@@ -22,69 +24,13 @@ const App: React.FC = () => {
   const [monthlyRecords, setMonthlyRecords] = useState<MonthlyRecord[]>([]);
 
   const DEFAULT_REDEEMED: RedeemedItem[] = [
-  {
-      id: 'R-1773109805069',
-      productId: 'R-1773109805069',
-      productName: 'Sofá cama',
-      price: 850000,
-      date: '2026-03-10T02:30:05.069Z',
-      userEmail: 'samuel@lubricafe',
-      distributor: 'LUBRICAFE'
-    },
-    {
-      id: 'R-lagos-luis-tv-mar',
-      productId: 'te2',
-      productName: 'Televisor 40" LED UHD 4K',
-      price: 1800000,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'luis@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
-    {
-      id: 'R-lagos-dayana-vent-mar',
-      productId: 'e14',
-      productName: 'Ventilador 3 en 1',
-      price: 239880,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'dayana@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
-    {
-      id: 'R-lagos-dayana-sand-mar',
-      productId: 'e8',
-      productName: 'Sanduchera Electrica 2 Puestos',
-      price: 96000,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'dayana@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
-    {
-      id: 'R-lagos-milton-vajilla-mar',
-      productId: 'hm3',
-      productName: 'Juego de vajilla 4 puestos',
-      price: 120000,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'milton@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
-    {
-      id: 'R-lagos-milton-vent-mar',
-      productId: 'e14',
-      productName: 'Ventilador 3 en 1',
-      price: 239880,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'milton@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
-    {
-      id: 'R-lagos-milton-ollas-mar',
-      productId: 'hm4',
-      productName: 'Bateria de ollas',
-      price: 240000,
-      date: '2026-03-15T12:00:00Z',
-      userEmail: 'milton@loslagos',
-      distributor: 'DISTRIBUIDORA LOS LAGOS'
-    },
+    { id: 'R-1773109805069', productId: 'R-1773109805069', productName: 'Sofá cama', price: 850000, date: '2026-03-10T02:30:05.069Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lagos-luis-tv-mar', productId: 'te2', productName: 'Televisor 40" LED UHD 4K', price: 1800000, date: '2026-03-15T12:00:00Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-dayana-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-dayana-sand-mar', productId: 'e8', productName: 'Sanduchera Electrica 2 Puestos', price: 96000, date: '2026-03-15T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-milton-vajilla-mar', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-milton-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-milton-ollas-mar', productId: 'hm4', productName: 'Bateria de ollas', price: 240000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
   ];
 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
@@ -100,63 +46,25 @@ const App: React.FC = () => {
     { id: 'default-monica-jan', userId: 'lc2', userName: 'Monica', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 984, valuePerGallon: 900, amountLoaded: 885600, redeemed: 0, availableBalance: 885600, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
     { id: 'default-melissa-jan', userId: 'lc3', userName: 'Melissa', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 825, valuePerGallon: 800, amountLoaded: 660000, redeemed: 0, availableBalance: 660000, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
     { id: 'default-samuel-jan', userId: 'lc4', userName: 'Samuel', distributor: 'LUBRICAFE', month: 'Enero', gallonsSold: 1682, valuePerGallon: 1000, amountLoaded: 1682000, redeemed: 0, availableBalance: 1682000, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
- {
-  id: 'default-samuel-apr',
-  userId: 'lc4',
-  userName: 'Samuel',
-  distributor: 'LUBRICAFE',
-  month: 'Abril',
-  gallonsSold: 1490,
-  valuePerGallon: 1000,
-  amountLoaded: 1490000,
-  redeemed: 0,
-  availableBalance: 1490000,
-  observations: 'Carga saldo abril',
-  date: '2026-04-30T12:00:00Z'
-},
-{
-  id: 'default-luz-piedad-apr',
-  userId: 'lc1',
-  userName: 'Luz Piedad',
-  distributor: 'LUBRICAFE',
-  month: 'Abril',
-  gallonsSold: 1007,
-  valuePerGallon: 1000,
-  amountLoaded: 1007000,
-  redeemed: 0,
-  availableBalance: 1007000,
-  observations: 'Carga saldo abril',
-  date: '2026-04-30T12:00:00Z'
-},
-{
-  id: 'default-melissa-apr',
-  userId: 'lc3',
-  userName: 'Melissa',
-  distributor: 'LUBRICAFE',
-  month: 'Abril',
-  gallonsSold: 867,
-  valuePerGallon: 800,
-  amountLoaded: 693600,
-  redeemed: 0,
-  availableBalance: 693600,
-  observations: 'Carga saldo abril',
-  date: '2026-04-30T12:00:00Z'
-},
-{ id: 'default-miguel-jan', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Enero', gallonsSold: 1281, valuePerGallon: 800, amountLoaded: 1024800, redeemed: 0, availableBalance: 1024800, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
-{ id: 'default-miguel-feb', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Febrero', gallonsSold: 1219, valuePerGallon: 800, amountLoaded: 975200, redeemed: 0, availableBalance: 975200, observations: 'Carga saldo febrero', date: '2026-02-28T12:00:00Z' },
-{ id: 'default-miguel-mar', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Marzo', gallonsSold: 1041, valuePerGallon: 800, amountLoaded: 832800, redeemed: 0, availableBalance: 832800, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' }, 
-{ id: 'default-giovanni-mar', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 810, valuePerGallon: 800, amountLoaded: 648000, redeemed: 0, availableBalance: 648000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
-{ id: 'default-yerlin-mar', userId: 'un5', userName: 'YERLIN MOLINA', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 802, valuePerGallon: 800, amountLoaded: 641600, redeemed: 0, availableBalance: 641600, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
-{ id: 'default-zaid-mar', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 1203, valuePerGallon: 1000, amountLoaded: 1203000, redeemed: 0, availableBalance: 1203000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
- { id: 'default-jhonny-mar', userId: '9', userName: 'Jhonny Steffanell', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 1309, valuePerGallon: 1000, amountLoaded: 1309000, redeemed: 0, availableBalance: 1309000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
- { id: 'default-jhonny-apr', userId: '9', userName: 'Jhonny Steffanell', distributor: 'UNIVERSAL', month: 'Abril', gallonsSold: 2187, valuePerGallon: 1000, amountLoaded: 2187000, redeemed: 0, availableBalance: 2187000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
-{ id: 'default-zaid-apr', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Abril', gallonsSold: 1307, valuePerGallon: 1000, amountLoaded: 1307000, redeemed: 0, availableBalance: 1307000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
- { id: 'default-juandavid-apr', userId: 'rd4', userName: 'JUAN DAVID RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1100, valuePerGallon: 500, amountLoaded: 550000, redeemed: 0, availableBalance: 550000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
-{ id: 'default-mauricio-apr', userId: 'rd5', userName: 'MAURICIO QUICENO', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 297, valuePerGallon: 600, amountLoaded: 178200, redeemed: 0, availableBalance: 178200, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
-{ id: 'default-alexander-apr', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1008, valuePerGallon: 1000, amountLoaded: 1008000, redeemed: 0, availableBalance: 1008000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
-{ id: 'default-santiago-apr', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1400, valuePerGallon: 1000, amountLoaded: 1400000, redeemed: 0, availableBalance: 1400000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
-{ id: 'default-jorge-apr', userId: 'rd7', userName: 'JORGE MARIN', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 163, valuePerGallon: 600, amountLoaded: 97800, redeemed: 0, availableBalance: 97800, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-samuel-apr', userId: 'lc4', userName: 'Samuel', distributor: 'LUBRICAFE', month: 'Abril', gallonsSold: 1490, valuePerGallon: 1000, amountLoaded: 1490000, redeemed: 0, availableBalance: 1490000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-luz-piedad-apr', userId: 'lc1', userName: 'Luz Piedad', distributor: 'LUBRICAFE', month: 'Abril', gallonsSold: 1007, valuePerGallon: 1000, amountLoaded: 1007000, redeemed: 0, availableBalance: 1007000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-melissa-apr', userId: 'lc3', userName: 'Melissa', distributor: 'LUBRICAFE', month: 'Abril', gallonsSold: 867, valuePerGallon: 800, amountLoaded: 693600, redeemed: 0, availableBalance: 693600, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-miguel-jan', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Enero', gallonsSold: 1281, valuePerGallon: 800, amountLoaded: 1024800, redeemed: 0, availableBalance: 1024800, observations: 'Carga saldo enero', date: '2026-01-31T12:00:00Z' },
+    { id: 'default-miguel-feb', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Febrero', gallonsSold: 1219, valuePerGallon: 800, amountLoaded: 975200, redeemed: 0, availableBalance: 975200, observations: 'Carga saldo febrero', date: '2026-02-28T12:00:00Z' },
+    { id: 'default-miguel-mar', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Marzo', gallonsSold: 1041, valuePerGallon: 800, amountLoaded: 832800, redeemed: 0, availableBalance: 832800, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+    { id: 'default-giovanni-mar', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 810, valuePerGallon: 800, amountLoaded: 648000, redeemed: 0, availableBalance: 648000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+    { id: 'default-yerlin-mar', userId: 'un5', userName: 'YERLIN MOLINA', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 802, valuePerGallon: 800, amountLoaded: 641600, redeemed: 0, availableBalance: 641600, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+    { id: 'default-zaid-mar', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 1203, valuePerGallon: 1000, amountLoaded: 1203000, redeemed: 0, availableBalance: 1203000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+    { id: 'default-jhonny-mar', userId: '9', userName: 'Jhonny Steffanell', distributor: 'UNIVERSAL', month: 'Marzo', gallonsSold: 1309, valuePerGallon: 1000, amountLoaded: 1309000, redeemed: 0, availableBalance: 1309000, observations: 'Carga saldo marzo', date: '2026-03-31T12:00:00Z' },
+    { id: 'default-jhonny-apr', userId: '9', userName: 'Jhonny Steffanell', distributor: 'UNIVERSAL', month: 'Abril', gallonsSold: 2187, valuePerGallon: 1000, amountLoaded: 2187000, redeemed: 0, availableBalance: 2187000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-zaid-apr', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Abril', gallonsSold: 1307, valuePerGallon: 1000, amountLoaded: 1307000, redeemed: 0, availableBalance: 1307000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-juandavid-apr', userId: 'rd4', userName: 'JUAN DAVID RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1100, valuePerGallon: 500, amountLoaded: 550000, redeemed: 0, availableBalance: 550000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-mauricio-apr', userId: 'rd5', userName: 'MAURICIO QUICENO', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 297, valuePerGallon: 600, amountLoaded: 178200, redeemed: 0, availableBalance: 178200, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-alexander-apr', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1008, valuePerGallon: 1000, amountLoaded: 1008000, redeemed: 0, availableBalance: 1008000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-santiago-apr', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1400, valuePerGallon: 1000, amountLoaded: 1400000, redeemed: 0, availableBalance: 1400000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    { id: 'default-jorge-apr', userId: 'rd7', userName: 'JORGE MARIN', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 163, valuePerGallon: 600, amountLoaded: 97800, redeemed: 0, availableBalance: 97800, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
   ];
+
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
   useEffect(() => {
@@ -266,6 +174,7 @@ const App: React.FC = () => {
     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
   };
 
+  // ✅ ENVÍA LA ORDEN A GOOGLE SHEETS + mantiene todo lo demás igual
   const handleCreateOrder = async (order: Order) => {
     setOrders(prev => [order, ...prev]);
     const newItem: RedeemedItem = {
@@ -279,6 +188,19 @@ const App: React.FC = () => {
     };
     setRedeemedItems(prev => [newItem, ...prev]);
 
+    // ✅ Guardar en Google Sheets (sin tocar correos)
+    try {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order),
+      });
+    } catch (err) {
+      console.warn('No se pudo guardar en Sheets:', err);
+    }
+
+    // Correos — sin cambios
     const distributorEmails: Record<string, string> = {
       'LUBRICAFE': 'grodriguez@prolub.com.co',
       'MAQUINAGRO': 'cblanco@prolub.com.co',
@@ -291,36 +213,28 @@ const App: React.FC = () => {
     };
 
     const commercialEmail = distributorEmails[order.distributor] || 'msilva@prolub.com.co';
-    
-     try {
-  const emailData = {
-    to_email: 'msilva@prolub.com.co',
-    cc_email: commercialEmail,
-    user_name: order.commercial,
-    distributor: order.distributor,
-    product_name: order.productName,
-    points: new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(order.discountedBalance),
-    receiver_name: order.recipientName,
-    phone: order.phone,
-    city: order.city,
-    address: order.address,
-    observations: order.observations || 'Sin observaciones',
-  };
-       
-  // Email a msilva
-  await emailjs.send('service_x7n514r', 'template_zaf2ohc', emailData, 'gM5-A17C2kxFykMOL');
 
-  // Email al comercial del distribuidor
-  await emailjs.send('service_x7n514r', 'template_zaf2ohc', {
-    ...emailData,
-    to_email: commercialEmail,
-  }, 'gM5-A17C2kxFykMOL');
-
-  console.log('Emails enviados correctamente');
-} catch (error) {
-  console.warn('Error enviando email:', error);
-}
+    try {
+      const emailData = {
+        to_email: 'msilva@prolub.com.co',
+        cc_email: commercialEmail,
+        user_name: order.commercial,
+        distributor: order.distributor,
+        product_name: order.productName,
+        points: new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(order.discountedBalance),
+        receiver_name: order.recipientName,
+        phone: order.phone,
+        city: order.city,
+        address: order.address,
+        observations: order.observations || 'Sin observaciones',
+      };
+      await emailjs.send('service_x7n514r', 'template_zaf2ohc', emailData, 'gM5-A17C2kxFykMOL');
+      await emailjs.send('service_x7n514r', 'template_zaf2ohc', { ...emailData, to_email: commercialEmail }, 'gM5-A17C2kxFykMOL');
+    } catch (error) {
+      console.warn('Error enviando email:', error);
+    }
   };
+
   const handleLogin = (loggedUser: User) => {
     if (loggedUser.role === 'ADMIN' && loggedUser.email !== 'admin.gulf') {
       alert("Acceso no autorizado.");
@@ -408,7 +322,12 @@ const App: React.FC = () => {
       <header className="bg-white border-b border-slate-200 sticky top-2 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex flex-col items-center">
           <div className="mb-4">
-            <img src="https://i.postimg.cc/SQ0kdm6y/Logo-GULF-2.png" alt="Gulf Logo" style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }} />
+            {/* ✅ LOGO CORREGIDO */}
+            <img
+              src="https://i.postimg.cc/SxWkYzGz/Gulf-Oil-logo-svg.png"
+              alt="Gulf Logo"
+              style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }}
+            />
           </div>
           <div className="w-full flex flex-col md:flex-row justify-between items-center pt-4 border-t border-slate-100 gap-4">
             <div className="flex flex-col text-center md:text-left">
@@ -445,6 +364,9 @@ const App: React.FC = () => {
                   </button>
                   <button onClick={() => setActiveView('catalog')} className={`flex items-center gap-2 text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-full transition-all ${activeView === 'catalog' ? 'bg-[#002F6C] text-white shadow-md' : 'text-slate-400 hover:text-[#002F6C]'}`}>
                     <ShoppingBag size={12} /> <span className="hidden sm:inline">Catalogo</span>
+                  </button>
+                  <button onClick={() => setActiveView('redeemed')} className={`flex items-center gap-2 text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-full transition-all ${activeView === 'redeemed' ? 'bg-[#002F6C] text-white shadow-md' : 'text-slate-400 hover:text-[#002F6C]'}`}>
+                    <ReceiptText size={12} /> <span className="hidden sm:inline">Redimidos</span>
                   </button>
                 </div>
               ) : (
@@ -485,7 +407,12 @@ const App: React.FC = () => {
       )}
       <footer className="bg-white py-10 text-center border-t border-slate-100 mt-12">
         <div className="container mx-auto px-4">
-          <img src="https://i.postimg.cc/SQ0kdm6y/Logo-GULF-2.png" alt="Gulf Logo" style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }} className="grayscale mb-4" />
+          <img
+            src="https://i.postimg.cc/SxWkYzGz/Gulf-Oil-logo-svg.png"
+            alt="Gulf Logo"
+            style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }}
+            className="grayscale mb-4"
+          />
           <p className="text-[10px] font-black text-[#002F6C] uppercase tracking-[0.4em] opacity-30 mb-2">
             &copy; {new Date().getFullYear()} GULF Lubricantes - Programa de Incentivos "Vender GULF sí paga"
           </p>
