@@ -408,7 +408,7 @@ const App: React.FC = () => {
       <footer className="bg-white py-10 text-center border-t border-slate-100 mt-12">
         <div className="container mx-auto px-4">
           <img
-            src="https://i.postimg.cc/SxWkYzGz/Gulf-Oil-logo-svg.png"
+            src="https://i.imgur.com/HP6QpMX.png"
             alt="Gulf Logo"
             style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }}
             className="grayscale mb-4"
