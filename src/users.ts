@@ -27,8 +27,8 @@ export const RAW_USERS: User[] = [
   { id: '17', name: 'Luis', email: 'luis@loslagos', password: 'GulfLL06', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 6088, initialGallons: 6088, balance: 1826400, initialBalance: 1826400, role: 'COMMERCIAL', monthlyBalances: {} },
 
   // LUBRICAFE
-  { id: 'lc1', name: 'Luz Piedad', email: 'luz.piedad@lubricafe', password: 'GulfLC01', distributor: 'LUBRICAFE', gallons: 1699, initialGallons: 885, balance: 1359200, initialBalance: 3058440, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 1359200 } },
-  { id: 'lc2', name: 'Mónica', email: 'monica@lubricafe', password: 'GulfLC02', distributor: 'LUBRICAFE', gallons: 1325, initialGallons: 341, balance: 885600, initialBalance: 869880, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 885600 } },
+  { id: 'lc1', name: 'Luz Piedad', email: 'luz.piedad@lubricafe', password: 'GulfLC01', distributor: 'LUBRICAFE', gallons: 1699, initialGallons: 885, balance: 1359200, initialBalance: 708000, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 1359200 } },
+  { id: 'lc2', name: 'Mónica', email: 'monica@lubricafe', password: 'GulfLC02', distributor: 'LUBRICAFE', gallons: 1325, initialGallons: 341, balance: 885600, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 885600 } },
   { id: 'lc3', name: 'Melissa', email: 'melissa@lubricafe', password: 'GulfLC03', distributor: 'LUBRICAFE', gallons: 1268, initialGallons: 443, balance: 660000, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 660000 } },
   { id: 'lc4', name: 'Samuel', email: 'samuel@lubricafe', password: 'GulfLC04', distributor: 'LUBRICAFE', gallons: 3493, initialGallons: 1811, balance: 2643000, initialBalance: 1811000, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 3493000 } },
 
