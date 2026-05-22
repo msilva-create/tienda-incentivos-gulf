@@ -322,7 +322,7 @@ const App: React.FC = () => {
             <button onClick={() => setActiveView('catalog')} className="bg-[#002F6C] text-white px-8 py-3 rounded-full font-black uppercase tracking-widest">Volver a Mi Tienda Gulf</button>
           </div>
         );
-        return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />;
+        return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />;
       case 'catalog':
         return <Catalog user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onRedeem={handleRedeem} onCreateOrder={handleCreateOrder} onBack={isAdmin ? () => setActiveView('admin') : undefined} />;
      case 'redeemed':
@@ -330,10 +330,10 @@ const App: React.FC = () => {
       case 'wishlist':
         return <Wishlist user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onBack={() => setActiveView('catalog')} />;
       case 'dashboard':
-        return <Dashboard user={user!} users={users} monthlyRecords={monthlyRecords} onGoToCatalog={() => setActiveView('catalog')} />;
+        return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord= onGoToCatalog={() => setActiveView('catalog')} />;
       default:
         return isAdmin
-          ? <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />
+          ? <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />
           : <Catalog user={user!} wishlist={wishlist} onToggleWishlist={toggleWishlist} onCreateOrder={handleCreateOrder} />;
     }
   };
