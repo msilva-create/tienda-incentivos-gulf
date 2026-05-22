@@ -26,7 +26,6 @@ const App: React.FC = () => {
   const DEFAULT_REDEEMED: RedeemedItem[] = [
     // FEBRERO
     { id: 'R-1773109805069', productId: 'hm1', productName: 'Sofá cama', price: 850000, date: '2026-02-10T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
-
     // MARZO
     { id: 'R-lagos-luis-tv-mar', productId: 'te2', productName: 'Televisor 40" LED UHD 4K', price: 1800000, date: '2026-03-15T12:00:00Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
@@ -37,14 +36,12 @@ const App: React.FC = () => {
     { id: 'R-maquinagro-gabriel-samsung-mar', productId: 'c1', productName: 'Samsung Galaxy A16 · 256 GB · 8 GB RAM', price: 1080000, date: '2026-03-20T12:00:00Z', userEmail: 'gabriel@maquinagro', distributor: 'MAQUINAGRO' },
     { id: 'R-lubricafe-samuel-tv65-mar', productId: 'te5', productName: 'Televisor 65" LED UHD 4K', price: 4000000, date: '2026-03-20T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
     { id: 'R-lubricafe-samuel-picatodo-mar', productId: 'e2', productName: 'Picatodo Negro', price: 131880, date: '2026-03-20T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
-
     // ABRIL
     { id: 'R-lagos-dayana-panini-apr', productId: 'e7', productName: 'Sanduchera Panini', price: 119400, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-cepillo-apr', productId: 'b5', productName: 'Cepillo Secador Babyliss', price: 300000, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-silvia-vajilla-apr', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-04-01T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-almacen-horno-apr', productId: 'e9', productName: 'Horno Electrico', price: 265080, date: '2026-04-01T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-maquinagro-miriam-laptop-apr', productId: 'ct1', productName: 'Portátil HP 14"', price: 1978800, date: '2026-04-01T12:00:00Z', userEmail: 'miriam@maquinagro', distributor: 'MAQUINAGRO' },
-
     // MAYO
     { id: 'R-lubricafe-luzpiedad-plancha-may', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-05-01T12:00:00Z', userEmail: 'luz.piedad@lubricafe', distributor: 'LUBRICAFE' },
     { id: 'R-lubricafe-luzpiedad-vent-may', productId: 'e12', productName: 'Ventilador De Piso', price: 298680, date: '2026-05-01T12:00:00Z', userEmail: 'luz.piedad@lubricafe', distributor: 'LUBRICAFE' },
@@ -201,7 +198,6 @@ const App: React.FC = () => {
     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
   };
 
-  // ✅ ENVÍA LA ORDEN A GOOGLE SHEETS + mantiene todo lo demás igual
   const handleCreateOrder = async (order: Order) => {
     setOrders(prev => [order, ...prev]);
     const newItem: RedeemedItem = {
@@ -215,7 +211,6 @@ const App: React.FC = () => {
     };
     setRedeemedItems(prev => [newItem, ...prev]);
 
-    // ✅ Guardar en Google Sheets (sin tocar correos)
     try {
       await fetch(SHEETS_URL, {
         method: 'POST',
@@ -227,7 +222,6 @@ const App: React.FC = () => {
       console.warn('No se pudo guardar en Sheets:', err);
     }
 
-    // Correos — sin cambios
     const distributorEmails: Record<string, string> = {
       'LUBRICAFE': 'grodriguez@prolub.com.co',
       'MAQUINAGRO': 'cblanco@prolub.com.co',
@@ -325,12 +319,12 @@ const App: React.FC = () => {
         return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />;
       case 'catalog':
         return <Catalog user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onRedeem={handleRedeem} onCreateOrder={handleCreateOrder} onBack={isAdmin ? () => setActiveView('admin') : undefined} />;
-     case 'redeemed':
-  return <Redeemed user={user} orders={orders} redeemedItems={redeemedItems} onBack={() => setActiveView('catalog')} />;
+      case 'redeemed':
+        return <Redeemed user={user} orders={orders} redeemedItems={redeemedItems} onBack={() => setActiveView('catalog')} />;
       case 'wishlist':
         return <Wishlist user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onBack={() => setActiveView('catalog')} />;
       case 'dashboard':
-        return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord= onGoToCatalog={() => setActiveView('catalog')} />;
+        return <Dashboard user={user!} users={users} monthlyRecords={monthlyRecords} onGoToCatalog={() => setActiveView('catalog')} />;
       default:
         return isAdmin
           ? <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} redeemedItems={redeemedItems} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />
@@ -349,12 +343,7 @@ const App: React.FC = () => {
       <header className="bg-white border-b border-slate-200 sticky top-2 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex flex-col items-center">
           <div className="mb-4">
-            {/* ✅ LOGO CORREGIDO */}
-            <img
-             src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png"
-              alt="Gulf Logo"
-              style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }}
-            />
+            <img src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png" alt="Gulf Logo" style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }} />
           </div>
           <div className="w-full flex flex-col md:flex-row justify-between items-center pt-4 border-t border-slate-100 gap-4">
             <div className="flex flex-col text-center md:text-left">
@@ -434,12 +423,7 @@ const App: React.FC = () => {
       )}
       <footer className="bg-white py-10 text-center border-t border-slate-100 mt-12">
         <div className="container mx-auto px-4">
-          <img
-            src="https://i.imgur.com/HP6QpMX.png"
-            alt="Gulf Logo"
-            style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }}
-            className="grayscale mb-4"
-          />
+          <img src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png" alt="Gulf Logo" style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }} className="grayscale mb-4" />
           <p className="text-[10px] font-black text-[#002F6C] uppercase tracking-[0.4em] opacity-30 mb-2">
             &copy; {new Date().getFullYear()} GULF Lubricantes - Programa de Incentivos "Vender GULF sí paga"
           </p>
