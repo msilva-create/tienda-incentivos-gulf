@@ -37,7 +37,7 @@ export const RAW_USERS: User[] = [
   { id: 'gm2', name: 'OSCAR JAVIER GARCIA DIAZ', email: 'oscar.grupomotor', password: 'gulf2', distributor: 'GRUPO MOTOR', gallons: 1520, initialGallons: 1520, balance: 1520000, initialBalance: 1520000, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 1520000 } },
 
   // RAMOS DISTRIBUCIONES
-  { id: 'rd1', name: 'ALEXANDER LABRADA', email: 'alexander.ramos', password: 'gulf1', distributor: 'RAMOS DISTRIBUCIONES', gallons: 1169, initialGallons: 1169, balance: 661800, initialBalance: 1778080, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 351700, 'Abril': 310100 } },
+  { id: 'rd1', name: 'ALEXANDER LABRADA', email: 'alexander.ramos', password: 'gulf1', distributor: 'RAMOS DISTRIBUCIONES', gallons: 1169, initialGallons: 1169, balance: 661800, initialBalance: 661800, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 351700, 'Abril': 310100 } },
   { id: 'rd2', name: 'SANTIAGO RAMOS', email: 'santiago.ramos', password: 'gulf2', distributor: 'RAMOS DISTRIBUCIONES', gallons: 1279, initialGallons: 1279, balance: 807200, initialBalance: 807200, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 120000, 'Abril': 687200 } },
   { id: 'rd3', name: 'EDWIN GAÑÁN', email: 'edwin.ramos', password: 'gulf1', distributor: 'RAMOS DISTRIBUCIONES', gallons: 176, initialGallons: 176, balance: 63600, initialBalance: 63600, role: 'COMMERCIAL', monthlyBalances: { 'Abril': 63600 } },
   { id: 'rd4', name: 'JUAN DAVID RAMOS', email: 'juandavid.ramos', password: 'gulf2', distributor: 'RAMOS DISTRIBUCIONES', gallons: 3895, initialGallons: 3895, balance: 1947500, initialBalance: 1947500, role: 'COMMERCIAL', monthlyBalances: { 'Abril': 1947500 } },
