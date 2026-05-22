@@ -23,7 +23,7 @@ export const RAW_USERS: User[] = [
   { id: '12', name: 'Silvia', email: 'silvia@loslagos', password: 'GulfLL02', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 1332, initialGallons: 1332, balance: 522000, initialBalance: 522000, role: 'COMMERCIAL', monthlyBalances: {} },
   { id: '13', name: 'Alvaro', email: 'alvaro@loslagos', password: 'GulfLL03', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 2278, initialGallons: 2278, balance: 1663700, initialBalance: 1663700, role: 'COMMERCIAL', monthlyBalances: {} },
   { id: '14', name: 'Dayana', email: 'dayana@loslagos', password: 'GulfLL04', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 1771, initialGallons: 1771, balance: 958400, initialBalance: 958400, role: 'COMMERCIAL', monthlyBalances: {} },
-  { id: '15', name: 'Almacen', email: 'almacen@loslagos', password: 'GulfLL05', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 1674, initialGallons: 1674, balance: 837000, initialBalance: 1187000, role: 'COMMERCIAL', monthlyBalances: {} },
+  { id: '15', name: 'Almacen', email: 'almacen@loslagos', password: 'GulfLL05', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 1674, initialGallons: 1674, balance: 837000, initialBalance: 837000, role: 'COMMERCIAL', monthlyBalances: {} },
   { id: '17', name: 'Luis', email: 'luis@loslagos', password: 'GulfLL06', distributor: 'DISTRIBUIDORA LOS LAGOS', gallons: 6088, initialGallons: 6088, balance: 1826400, initialBalance: 1826400, role: 'COMMERCIAL', monthlyBalances: {} },
 
   // LUBRICAFE
