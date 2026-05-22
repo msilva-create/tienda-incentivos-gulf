@@ -31,7 +31,11 @@ const App: React.FC = () => {
     { id: 'R-lagos-milton-vajilla-mar', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-milton-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-milton-ollas-mar', productId: 'hm4', productName: 'Bateria de ollas', price: 240000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
-  ];
+   { id: 'R-lagos-dayana-panini-apr', productId: 'e7', productName: 'Sanduchera Panini', price: 119400, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-dayana-cepillo-apr', productId: 'b5', productName: 'Cepillo Secador Babyliss', price: 300000, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-silvia-vajilla-apr', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-04-01T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-almacen-horno-apr', productId: 'e9', productName: 'Horno Electrico', price: 265080, date: '2026-04-01T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-maquinagro-miriam-laptop-apr', productId: 'ct1', productName: 'Portátil HP 14"', price: 1978800, date: '2026-04-01T12:00:00Z', userEmail: 'miriam@maquinagro', distributor: 'MAQUINAGRO' } ];
 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
