@@ -24,18 +24,41 @@ const App: React.FC = () => {
   const [monthlyRecords, setMonthlyRecords] = useState<MonthlyRecord[]>([]);
 
   const DEFAULT_REDEEMED: RedeemedItem[] = [
-    { id: 'R-1773109805069', productId: 'R-1773109805069', productName: 'Sofá cama', price: 850000, date: '2026-03-10T02:30:05.069Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
+    // FEBRERO
+    { id: 'R-1773109805069', productId: 'hm1', productName: 'Sofá cama', price: 850000, date: '2026-02-10T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
+
+    // MARZO
     { id: 'R-lagos-luis-tv-mar', productId: 'te2', productName: 'Televisor 40" LED UHD 4K', price: 1800000, date: '2026-03-15T12:00:00Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-sand-mar', productId: 'e8', productName: 'Sanduchera Electrica 2 Puestos', price: 96000, date: '2026-03-15T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-milton-vajilla-mar', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-milton-vent-mar', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-milton-ollas-mar', productId: 'hm4', productName: 'Bateria de ollas', price: 240000, date: '2026-03-15T12:00:00Z', userEmail: 'milton@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
-   { id: 'R-lagos-dayana-panini-apr', productId: 'e7', productName: 'Sanduchera Panini', price: 119400, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-maquinagro-gabriel-samsung-mar', productId: 'c1', productName: 'Samsung Galaxy A16 · 256 GB · 8 GB RAM', price: 1080000, date: '2026-03-20T12:00:00Z', userEmail: 'gabriel@maquinagro', distributor: 'MAQUINAGRO' },
+    { id: 'R-lubricafe-samuel-tv65-mar', productId: 'te5', productName: 'Televisor 65" LED UHD 4K', price: 4000000, date: '2026-03-20T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-samuel-picatodo-mar', productId: 'e2', productName: 'Picatodo Negro', price: 131880, date: '2026-03-20T12:00:00Z', userEmail: 'samuel@lubricafe', distributor: 'LUBRICAFE' },
+
+    // ABRIL
+    { id: 'R-lagos-dayana-panini-apr', productId: 'e7', productName: 'Sanduchera Panini', price: 119400, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-cepillo-apr', productId: 'b5', productName: 'Cepillo Secador Babyliss', price: 300000, date: '2026-04-01T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-silvia-vajilla-apr', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-04-01T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-almacen-horno-apr', productId: 'e9', productName: 'Horno Electrico', price: 265080, date: '2026-04-01T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
-    { id: 'R-maquinagro-miriam-laptop-apr', productId: 'ct1', productName: 'Portátil HP 14"', price: 1978800, date: '2026-04-01T12:00:00Z', userEmail: 'miriam@maquinagro', distributor: 'MAQUINAGRO' } ];
+    { id: 'R-maquinagro-miriam-laptop-apr', productId: 'ct1', productName: 'Portátil HP 14"', price: 1978800, date: '2026-04-01T12:00:00Z', userEmail: 'miriam@maquinagro', distributor: 'MAQUINAGRO' },
+
+    // MAYO
+    { id: 'R-lubricafe-luzpiedad-plancha-may', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-05-01T12:00:00Z', userEmail: 'luz.piedad@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-luzpiedad-vent-may', productId: 'e12', productName: 'Ventilador De Piso', price: 298680, date: '2026-05-01T12:00:00Z', userEmail: 'luz.piedad@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-luzpiedad-tablet-may', productId: 'ct2', productName: 'Tablet SAMSUNG', price: 1919880, date: '2026-05-01T12:00:00Z', userEmail: 'luz.piedad@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-monica-bono-gorra-may', productId: 'bp2', productName: 'Bono Éxito $30.000 + Gorra GULF', price: 50000, date: '2026-05-01T12:00:00Z', userEmail: 'monica@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-monica-olla-may', productId: 'e6', productName: 'Olla Eléctrica Multifunción', price: 479880, date: '2026-05-01T12:00:00Z', userEmail: 'monica@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-monica-parlante-may', productId: 'te7', productName: 'Parlante Clip 5 JBL', price: 340000, date: '2026-05-01T12:00:00Z', userEmail: 'monica@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-ramos-alexander-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-aspiradora-may', productId: 'bp9', productName: 'Bono Éxito $80.000 + Aspiradora Vertical Mano Hogar Carro Inalámbrica', price: 200000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-humidificador-may', productId: 'bp13', productName: 'Bono Éxito $50.000 + Mini Humidificador USB', price: 100000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-freidora-may', productId: 'e3', productName: 'Freidora de aire 4 Litros', price: 416280, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-soporte-may', productId: 'bp1', productName: 'Bono Éxito $30.000 + Soporte Celular Gulf', price: 50000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-lagos-almacen-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-15T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+  ];
 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
