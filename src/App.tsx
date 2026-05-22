@@ -325,8 +325,8 @@ const App: React.FC = () => {
         return <AdminDashboard users={users} monthlyRecords={monthlyRecords} orders={orders} onAddMonthlyRecord={handleAddMonthlyRecord} onUpdateMonthlyRecord={handleUpdateMonthlyRecord} onDeleteMonthlyRecord={handleDeleteMonthlyRecord} onUpdateOrderStatus={handleUpdateOrderStatus} />;
       case 'catalog':
         return <Catalog user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onRedeem={handleRedeem} onCreateOrder={handleCreateOrder} onBack={isAdmin ? () => setActiveView('admin') : undefined} />;
-      case 'redeemed':
-        return <Redeemed user={user} orders={orders} onBack={() => setActiveView('catalog')} />;
+     case 'redeemed':
+  return <Redeemed user={user} orders={orders} redeemedItems={redeemedItems} onBack={() => setActiveView('catalog')} />;
       case 'wishlist':
         return <Wishlist user={user} wishlist={wishlist} onToggleWishlist={toggleWishlist} onBack={() => setActiveView('catalog')} />;
       case 'dashboard':
