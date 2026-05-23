@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { User, Product } from '../types';
 import { CATALOG_PRODUCTS } from '../constants';
@@ -25,7 +24,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
     recipientName: '',
     contactName: '',
     phone: '',
-    email: user.email,
+    clientEmail: '',
     city: '',
     address: '',
     reference: '',
@@ -100,9 +99,8 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
 
   const confirmRedemption = () => {
     if (confirmingProduct) {
-      // Validate form
-      if (!deliveryData.recipientName || !deliveryData.contactName || !deliveryData.phone || !deliveryData.city || !deliveryData.address) {
-        alert('Por favor completa todos los campos obligatorios.');
+      if (!deliveryData.recipientName || !deliveryData.contactName || !deliveryData.phone || !deliveryData.city || !deliveryData.address || !deliveryData.clientEmail) {
+        alert('Por favor completa todos los campos obligatorios, incluyendo el correo electrónico.');
         return;
       }
 
@@ -111,7 +109,14 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
       
       const newOrder = {
         id: orderId,
-        ...deliveryData,
+        recipientName: deliveryData.recipientName,
+        contactName: deliveryData.contactName,
+        phone: deliveryData.phone,
+        clientEmail: deliveryData.clientEmail,
+        city: deliveryData.city,
+        address: deliveryData.address,
+        reference: deliveryData.reference,
+        observations: deliveryData.observations,
         requestDate,
         distributor: user.distributor,
         commercial: user.name + (isTestUser ? ' (PRUEBA)' : ''),
@@ -136,7 +141,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
           recipientName: '',
           contactName: '',
           phone: '',
-          email: user.email,
+          clientEmail: '',
           city: '',
           address: '',
           reference: '',
@@ -168,7 +173,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                   </div>
                   <h3 className="text-2xl font-black text-[#002F6C] italic uppercase">¡Solicitud Generada!</h3>
                   <p className="text-slate-500 font-bold text-sm uppercase px-4 leading-relaxed">
-                    Tu solicitud de redención ha sido enviada al Administrador Central para su aprobación.
+                    Tu solicitud de redención ha sido enviada al Administrador Central para su aprobación. Revisa tu correo electrónico.
                   </p>
                 </div>
               ) : (
@@ -231,6 +236,19 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                           placeholder="QUIEN COORDINA"
                         />
                       </div>
+
+                      {/* ✅ CAMPO EMAIL NUEVO */}
+                      <div className="space-y-1">
+                        <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Correo Electrónico *</label>
+                        <input 
+                          type="email" 
+                          value={deliveryData.clientEmail}
+                          onChange={(e) => setDeliveryData({...deliveryData, clientEmail: e.target.value})}
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-100 focus:border-[#FF6A00] outline-none font-black text-[10px]"
+                          placeholder="correo@ejemplo.com"
+                        />
+                      </div>
+
                       <div className="grid grid-cols-2 gap-3">
                         <div className="space-y-1">
                           <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Celular *</label>
@@ -355,8 +373,8 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
       {isBonoCategory && (
         <div className="bg-blue-50/50 border-2 border-blue-100 p-6 rounded-3xl animate-gulf">
           <p className="text-[#002F6C] font-bold text-base uppercase leading-tight italic">
-            “Canjea tu Bono Éxito y recibe un producto adicional. <br/>
-            <span className="text-[#FF6A00]">Genera tu solicitud de redención ahora.</span>”
+            "Canjea tu Bono Éxito y recibe un producto adicional. <br/>
+            <span className="text-[#FF6A00]">Genera tu solicitud de redención ahora.</span>"
           </p>
         </div>
       )}
