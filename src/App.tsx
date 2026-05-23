@@ -247,6 +247,8 @@ const App: React.FC = () => {
         product_name: order.productName,
         points: formatCurrencyEmail(order.discountedBalance),
         receiver_name: order.recipientName,
+        contact_name: order.contactName,
+        client_email: order.clientEmail,
         phone: order.phone,
         city: order.city,
         address: order.address,
