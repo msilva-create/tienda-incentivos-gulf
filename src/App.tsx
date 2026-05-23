@@ -234,29 +234,36 @@ const App: React.FC = () => {
     };
 
     const commercialEmail = distributorEmails[order.distributor] || 'msilva@prolub.com.co';
-
-    try {
-      const emailData = {
+ try {
+      const fmt = (val: number) => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(val);
+      await emailjs.send('service_x7n514r', 'template_zaf2ohc', {
         to_email: 'msilva@prolub.com.co',
         cc_email: commercialEmail,
         user_name: order.commercial,
         distributor: order.distributor,
         product_name: order.productName,
-        points: new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(order.discountedBalance),
+        points: fmt(order.discountedBalance),
         receiver_name: order.recipientName,
         phone: order.phone,
         city: order.city,
         address: order.address,
         observations: order.observations || 'Sin observaciones',
-      };
-      await emailjs.send('service_x7n514r', 'template_zaf2ohc', emailData, 'gM5-A17C2kxFykMOL');
-      await emailjs.send('service_x7n514r', 'template_zaf2ohc', { ...emailData, to_email: commercialEmail }, 'gM5-A17C2kxFykMOL');
+      }, 'gM5-A17C2kxFykMOL');
+      if (order.clientEmail) {
+        await emailjs.send('service_x7n514r', 'template_j68x3t7', {
+          client_email: order.clientEmail,
+          receiver_name: order.recipientName,
+          product_name: order.productName,
+          points: fmt(order.discountedBalance),
+          user_name: order.commercial,
+          distributor: order.distributor,
+          city: order.city,
+        }, 'gM5-A17C2kxFykMOL');
+      }
     } catch (error) {
       console.warn('Error enviando email:', error);
     }
-  };
-
-  const handleLogin = (loggedUser: User) => {
+const handleLogin = (loggedUser: User) => {
     if (loggedUser.role === 'ADMIN' && loggedUser.email !== 'admin.gulf') {
       alert("Acceso no autorizado.");
       return;
