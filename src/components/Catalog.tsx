@@ -215,7 +215,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                       </div>
                     </>
                   ) : (
-                    <div className="space-y-4 text-left max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+                    <div className="space-y-4 text-left max-h-[75vh] overflow-y-auto pr-2 custom-scrollbar">
                       <div className="space-y-1">
                         <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Nombre de quien recibe *</label>
                         <input 
