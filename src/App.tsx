@@ -55,6 +55,7 @@ const App: React.FC = () => {
     { id: 'R-ramos-alexander-freidora-may', productId: 'e3', productName: 'Freidora de aire 4 Litros', price: 416280, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-ramos-alexander-soporte-may', productId: 'bp1', productName: 'Bono Éxito $30.000 + Soporte Celular Gulf', price: 50000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-lagos-almacen-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-15T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-servitecas-miguel-ahumador-may', productId: 'hm-ahumador', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-05-25T12:00:00Z', userEmail: 'miguel@servitecas', distributor: 'CVC SERVITECAS' },
   ];
 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
@@ -87,11 +88,24 @@ const App: React.FC = () => {
     { id: 'default-alexander-apr', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1008, valuePerGallon: 1000, amountLoaded: 1008000, redeemed: 0, availableBalance: 1008000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
     { id: 'default-santiago-apr', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 1400, valuePerGallon: 1000, amountLoaded: 1400000, redeemed: 0, availableBalance: 1400000, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
     { id: 'default-jorge-apr', userId: 'rd7', userName: 'JORGE MARIN', distributor: 'RAMOS DISTRIBUCIONES', month: 'Abril', gallonsSold: 163, valuePerGallon: 600, amountLoaded: 97800, redeemed: 0, availableBalance: 97800, observations: 'Carga saldo abril', date: '2026-04-30T12:00:00Z' },
+    // MAYO
+    { id: 'default-miguel-may', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Mayo', gallonsSold: 1121, valuePerGallon: 800, amountLoaded: 896800, redeemed: 0, availableBalance: 896800, observations: 'Carga saldo mayo', date: '2026-05-25T12:00:00Z' },
+    { id: 'default-cesar-may', userId: 'sv1', userName: 'César Cruz', distributor: 'CVC SERVITECAS', month: 'Mayo', gallonsSold: 861, valuePerGallon: 800, amountLoaded: 688800, redeemed: 0, availableBalance: 688800, observations: 'Carga saldo mayo', date: '2026-05-25T12:00:00Z' },
+    { id: 'default-miriam-may', userId: '2', userName: 'Miriam', distributor: 'MAQUINAGRO', month: 'Mayo', gallonsSold: 948, valuePerGallon: 700, amountLoaded: 663600, redeemed: 0, availableBalance: 663600, observations: 'Carga saldo mayo', date: '2026-05-25T12:00:00Z' },
   ];
 
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
   useEffect(() => {
+    const APP_VERSION = '1.0.7';
+    const savedVersion = localStorage.getItem('gulf_version');
+    if (savedVersion !== APP_VERSION) {
+      localStorage.clear();
+      localStorage.setItem('gulf_version', APP_VERSION);
+      window.location.reload();
+      return;
+    }
+
     const savedUsers = localStorage.getItem('gulf_all_users');
     const savedRedeemed = localStorage.getItem('gulf_redeemed');
     let redeemed: RedeemedItem[] = savedRedeemed ? JSON.parse(savedRedeemed) : [];
