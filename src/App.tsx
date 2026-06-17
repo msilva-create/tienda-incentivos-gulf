@@ -107,6 +107,10 @@ const App: React.FC = () => {
     { id: 'default-alexander-jun', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 297, valuePerGallon: 600, amountLoaded: 178200, redeemed: 0, availableBalance: 178200, observations: 'Carga saldo junio - Nivel Impulso', date: '2026-06-30T12:00:00Z' },
     { id: 'default-santiago-jun', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 1000, valuePerGallon: 1000, amountLoaded: 1000000, redeemed: 0, availableBalance: 1000000, observations: 'Carga saldo junio - Nivel Élite', date: '2026-06-30T12:00:00Z' },
     { id: 'default-luis-jun', userId: 'rd8', userName: 'LUIS ORREGO', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 16, valuePerGallon: 0, amountLoaded: 0, redeemed: 0, availableBalance: 0, observations: 'Carga saldo junio - No aplica por mínimo de galones', date: '2026-06-30T12:00:00Z' },
+  
+    // JUNIO - DISTRIBUIDORA LOS LAGOS
+    { id: 'default-alvaro-jun', userId: '13', userName: 'Alvaro', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 943, valuePerGallon: 800, amountLoaded: 754400, redeemed: 0, availableBalance: 754400, observations: 'Carga saldo junio - Cumplimiento 120%', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-juan-jun', userId: '16', userName: 'Juan', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 800, valuePerGallon: 800, amountLoaded: 640000, redeemed: 0, availableBalance: 640000, observations: 'Carga saldo junio - Cumplimiento 120%', date: '2026-06-30T12:00:00Z' },
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
