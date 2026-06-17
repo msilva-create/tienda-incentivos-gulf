@@ -73,7 +73,7 @@ export const CATALOG_PRODUCTS: Product[] = [
   { id: 'te14', name: 'Audífonos de diadema JBL Bluetooth', price: 339000, category: 'TECNOLOGÍA Y ENTRETENIMIENTO', image: 'https://i.postimg.cc/7ZpL77mb/audifonos_bluetooh.png' },
   { id: 'te15', name: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, category: 'TECNOLOGÍA Y ENTRETENIMIENTO', image: 'https://i.postimg.cc/htRz9K7m/Captura-de-pantalla-2026-05-21-135925.png' },
   { id: 'te16', name: 'Amazon Alexa', price: 360000, category: 'TECNOLOGÍA Y ENTRETENIMIENTO', image: 'https://i.postimg.cc/g082KJTX/Alexa_bluetooh.png' },
-  { id: 'te17', name: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000,  category: 'TECNOLOGÍA Y ENTRETENIMIENTO', image: 'https://i.postimg.cc/TYw3FB2b/Captura-de-pantalla-2026-06-17-112013.png' 
+  { id: 'te18', name: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000,  category: 'TECNOLOGÍA Y ENTRETENIMIENTO', image: 'https://i.postimg.cc/TYw3FB2b/Captura-de-pantalla-2026-06-17-112013.png' 
   },
   // 4.1 TECNOLOGÍA Y HOGAR INTELIGENTE
   { id: 'te13', name: 'Aspiradora Robot', price: 882000, category: 'TECNOLOGÍA Y HOGAR INTELIGENTE', image: 'https://i.postimg.cc/NfBLMdh7/Captura-de-pantalla-2026-05-21-140402.png' },
