@@ -111,11 +111,15 @@ const App: React.FC = () => {
     // JUNIO - DISTRIBUIDORA LOS LAGOS
     { id: 'default-alvaro-jun', userId: '13', userName: 'Alvaro', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 943, valuePerGallon: 800, amountLoaded: 754400, redeemed: 0, availableBalance: 754400, observations: 'Carga saldo junio - Cumplimiento 120%', date: '2026-06-30T12:00:00Z' },
     { id: 'default-juan-jun', userId: '16', userName: 'Juan', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 800, valuePerGallon: 800, amountLoaded: 640000, redeemed: 0, availableBalance: 640000, observations: 'Carga saldo junio - Cumplimiento 120%', date: '2026-06-30T12:00:00Z' },
+     // JUNIO - UNIVERSAL
+    { id: 'default-zaid-jun', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 3275, valuePerGallon: 1000, amountLoaded: 3275000, redeemed: 0, availableBalance: 3275000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-jhonny-jun', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 1320, valuePerGallon: 1000, amountLoaded: 1320000, redeemed: 0, availableBalance: 1320000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-giovanni-jun', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 1016, valuePerGallon: 1000, amountLoaded: 1016000, redeemed: 0, availableBalance: 1016000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
   useEffect(() => {
-    const APP_VERSION = '1.0.8';
+ const APP_VERSION = '1.0.13';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
