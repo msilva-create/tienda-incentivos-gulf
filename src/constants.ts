@@ -51,7 +51,7 @@ export const CATALOG_PRODUCTS: Product[] = [
   { id: 'lb3', name: 'Nevera No Frost 389 L', price: 2280000, category: 'ELECTRODOMÉSTICOS', image: 'https://i.postimg.cc/sgskYBrH/NEVERA_NO_FROST_389_L.png' },
   { id: 'lb4', name: 'Lavadora Carga Superior 15 kg', price: 2000000, category: 'ELECTRODOMÉSTICOS', image: 'https://i.postimg.cc/N0fzjqDS/Captura-de-pantalla-2026-05-21-141310.png' },
   { id: 'lb5', name: 'Lavadora Carga Superior 11 kg (24lb)', price: 1300000, category: 'ELECTRODOMÉSTICOS', image: 'https://i.postimg.cc/SQr1MJWt/Gemini_Generated_Image_hpdidehpdidehpdi.png' },
-
+{ id: 'e18', name: 'Freidora de aire OSTER 7.5 Litros Digital DiamondForce', price: 615000, category: 'ELECTRODOMÉSTICOS', image: 'https://i.postimg.cc/HxnTRydL/Captura-de-pantalla-2026-06-17-113751.png' },
   // 3. HOGAR Y MUEBLES
   { id: 'hm1', name: 'Sofá cama', price: 850000, category: 'HOGAR Y MUEBLES', image: 'https://i.postimg.cc/2SBCyqwN/Captura-de-pantalla-2026-03-06-144427.jpg' },
   { id: 'hm2', name: 'Juego de comedor 6 puestos', price: 1000000, category: 'HOGAR Y MUEBLES', image: 'https://i.postimg.cc/VLpTgVYv/Captura-de-pantalla-2026-05-21-140838.png' },
