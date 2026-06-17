@@ -91,7 +91,6 @@ const App: React.FC = () => {
     { id: 'default-cesar-may', userId: 'sv1', userName: 'César Cruz', distributor: 'CVC SERVITECAS', month: 'Mayo', gallonsSold: 861, valuePerGallon: 800, amountLoaded: 688800, redeemed: 0, availableBalance: 688800, observations: 'Carga saldo mayo', date: '2026-05-25T12:00:00Z' },
     { id: 'default-miriam-may', userId: '2', userName: 'Miriam', distributor: 'MAQUINAGRO', month: 'Mayo', gallonsSold: 948, valuePerGallon: 700, amountLoaded: 663600, redeemed: 0, availableBalance: 663600, observations: 'Carga saldo mayo', date: '2026-05-25T12:00:00Z' },
   ];
-
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
 
   useEffect(() => {
