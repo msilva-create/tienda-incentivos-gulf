@@ -54,8 +54,9 @@ const App: React.FC = () => {
     { id: 'R-ramos-alexander-humidificador-may', productId: 'bp13', productName: 'Bono Éxito $50.000 + Mini Humidificador USB', price: 100000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-ramos-alexander-freidora-may', productId: 'e3', productName: 'Freidora de aire 4 Litros', price: 416280, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-ramos-alexander-soporte-may', productId: 'bp1', productName: 'Bono Éxito $30.000 + Soporte Celular Gulf', price: 50000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
-    { id: 'R-lagos-almacen-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-15T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+        { id: 'R-lagos-almacen-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-15T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-servitecas-miguel-ahumador-may', productId: 'hm-ahumador', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-05-25T12:00:00Z', userEmail: 'miguel@servitecas', distributor: 'CVC SERVITECAS' },
+  ];
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
     { id: 'default-jhonny-feb', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 1247, valuePerGallon: 1000, amountLoaded: 1247000, redeemed: 0, availableBalance: 1247000, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
