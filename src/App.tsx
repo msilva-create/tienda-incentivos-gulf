@@ -56,6 +56,12 @@ const App: React.FC = () => {
     { id: 'R-ramos-alexander-soporte-may', productId: 'bp1', productName: 'Bono Éxito $30.000 + Soporte Celular Gulf', price: 50000, date: '2026-05-01T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
         { id: 'R-lagos-almacen-proyector-may', productId: 'te15', productName: 'Mini Proyector WiFi y Bluetooth - Resolución nativa 1080P', price: 350000, date: '2026-05-15T12:00:00Z', userEmail: 'almacen@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-servitecas-miguel-ahumador-may', productId: 'hm-ahumador', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-05-25T12:00:00Z', userEmail: 'miguel@servitecas', distributor: 'CVC SERVITECAS' },
+
+    // JUNIO - REDENCIONES
+    { id: 'R-universal-zaid-bono-audifonos-jun', productId: 'bp-zaid-audifonos-jun', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-06-30T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-lagos-dayana-vasos-jun', productId: 'bp-dayana-vasos-jun', productName: 'Bono Éxito $50.000 + Set de 6 Vasos Vidrio', price: 80000, date: '2026-06-30T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-dayana-termo-jun', productId: 'bp-dayana-termo-jun', productName: 'Bono Éxito $30.000 + Termo Gulf Acero Inoxidable', price: 80000, date: '2026-06-30T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-jairo-george-samsung-a36-jun', productId: 'c-george-a36-jun', productName: 'Samsung Galaxy A36 · 256 GB · 8 GB RAM', price: 1500000, date: '2026-06-30T12:00:00Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
   ];
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
