@@ -484,7 +484,7 @@ const App: React.FC = () => {
       )}
       <footer className="bg-white py-10 text-center border-t border-slate-100 mt-12">
         <div className="container mx-auto px-4">
-          <img src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png" alt="Gulf Logo" style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }} className="grayscale mb-4" />
+         <img src="https://i.postimg.cc/m2Lsd9mp/Captura-de-pantalla-2026-06-19-233321.png" alt="Gulf Logo" style={{ height: '60px', width: 'auto', display: 'block', margin: '0 auto', opacity: 0.2 }} className="grayscale mb-4" />
           <p className="text-[10px] font-black text-[#002F6C] uppercase tracking-[0.4em] opacity-30 mb-2">
             &copy; {new Date().getFullYear()} GULF Lubricantes - Programa de Incentivos "Vender GULF sí paga"
           </p>
