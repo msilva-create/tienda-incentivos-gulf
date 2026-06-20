@@ -395,7 +395,7 @@ const App: React.FC = () => {
       <header className="bg-white border-b border-slate-200 sticky top-2 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex flex-col items-center">
           <div className="mb-4">
-            <img src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png" alt="Gulf Logo" style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }} />
+           <img src="https://i.postimg.cc/m2Lsd9mp/Captura-de-pantalla-2026-06-19-233321.png" alt="Gulf Logo" style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }} />
           </div>
           <div className="w-full flex flex-col md:flex-row justify-between items-center pt-4 border-t border-slate-100 gap-4">
             <div className="flex flex-col text-center md:text-left">
