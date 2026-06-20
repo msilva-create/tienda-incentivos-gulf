@@ -88,14 +88,14 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   const LogoHeader = () => (
-    <div className="flex flex-col items-center mb-10 w-full cursor-pointer select-none" onClick={handleLogoClick}>
-      <img 
-        src="https://i.postimg.cc/wMgp2bgd/Logo-GULF.png" 
-        alt="Gulf Logo" 
-        style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }}
-      />
-    </div>
-  );
+  <div className="flex flex-col items-center mb-10 w-full cursor-pointer select-none" onClick={handleLogoClick}>
+    <img 
+      src="https://i.postimg.cc/m2Lsd9mp/Captura-de-pantalla-2026-06-19-233321.png" 
+      alt="Gulf Logo" 
+      style={{ height: '120px', width: 'auto', display: 'block', margin: '0 auto' }}
+    />
+  </div>
+);
 
   const renderHomeStep = () => (
     <div className="animate-gulf space-y-8 max-w-lg mx-auto text-center">
