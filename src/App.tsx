@@ -125,7 +125,7 @@ const App: React.FC = () => {
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.20';
+ const APP_VERSION = '1.0.21';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
