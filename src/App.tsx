@@ -64,6 +64,7 @@ const App: React.FC = () => {
     { id: 'R-jairo-george-samsung-a36-jun', productId: 'c-george-a36-jun', productName: 'Samsung Galaxy A36 · 256 GB · 8 GB RAM', price: 1500000, date: '2026-06-30T12:00:00Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
      // JUNIO - REDENCIONES ADICIONALES
     { id: 'R-ramos-juandavid-maletin-jun', productId: 'b3', productName: 'Maletín Transportador para Mascota tipo Bolso', price: 170000, date: '2026-06-30T12:00:00Z', userEmail: 'juan.david@ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-ahumador-jun', productId: 'b1', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-06-30T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-lagos-silvia-plancha-vapor-jun', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-silvia-licuadora-jun', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
   ];
