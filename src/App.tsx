@@ -62,6 +62,10 @@ const App: React.FC = () => {
     { id: 'R-lagos-dayana-vasos-jun', productId: 'bp-dayana-vasos-jun', productName: 'Bono Éxito $50.000 + Set de 6 Vasos Vidrio', price: 80000, date: '2026-06-30T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-dayana-termo-jun', productId: 'bp-dayana-termo-jun', productName: 'Bono Éxito $30.000 + Termo Gulf Acero Inoxidable', price: 80000, date: '2026-06-30T12:00:00Z', userEmail: 'dayana@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-jairo-george-samsung-a36-jun', productId: 'c-george-a36-jun', productName: 'Samsung Galaxy A36 · 256 GB · 8 GB RAM', price: 1500000, date: '2026-06-30T12:00:00Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+     // JUNIO - REDENCIONES ADICIONALES
+    { id: 'R-ramos-juandavid-maletin-jun', productId: 'b3', productName: 'Maletín Transportador para Mascota tipo Bolso', price: 170000, date: '2026-06-30T12:00:00Z', userEmail: 'juan.david@ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-lagos-silvia-plancha-vapor-jun', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-silvia-licuadora-jun', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
   ];
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
