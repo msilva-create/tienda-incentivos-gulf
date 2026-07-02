@@ -115,9 +115,12 @@ const App: React.FC = () => {
     { id: 'default-zaid-jun', userId: '8', userName: 'Zaid Murgas', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 3275, valuePerGallon: 1000, amountLoaded: 3275000, redeemed: 0, availableBalance: 3275000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
     { id: 'default-jhonny-jun', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 1320, valuePerGallon: 1000, amountLoaded: 1320000, redeemed: 0, availableBalance: 1320000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
     { id: 'default-giovanni-jun', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 1016, valuePerGallon: 1000, amountLoaded: 1016000, redeemed: 0, availableBalance: 1016000, observations: 'Carga saldo junio - Cumplimiento 100% o superior', date: '2026-06-30T12:00:00Z' },
+    // JUNIO - CARGUES ADICIONALES
+    { id: 'default-juan-lagos-jun', userId: '16', userName: 'Juan', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 800, valuePerGallon: 800, amountLoaded: 640000, redeemed: 0, availableBalance: 640000, observations: 'Carga saldo junio - Cumplimiento 120%', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-miguel-cvc-jun', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Junio', gallonsSold: 765, valuePerGallon: 600, amountLoaded: 459000, redeemed: 0, availableBalance: 459000, observations: 'Carga saldo junio', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-luis-enrique-lagos-jun', userId: '17', userName: 'Luis Enrique', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 3107, valuePerGallon: 300, amountLoaded: 932100, redeemed: 0, availableBalance: 932100, observations: 'Carga saldo junio', date: '2026-06-30T12:00:00Z' }, 
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
-
   useEffect(() => {
  const APP_VERSION = '1.0.19';
     const savedVersion = localStorage.getItem('gulf_version');
