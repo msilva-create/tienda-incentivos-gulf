@@ -126,10 +126,18 @@ const App: React.FC = () => {
     // JUNIO - CARGUES ADICIONALES
     { id: 'default-miguel-cvc-jun', userId: 'sv2', userName: 'Miguel Vargas', distributor: 'CVC SERVITECAS', month: 'Junio', gallonsSold: 765, valuePerGallon: 600, amountLoaded: 459000, redeemed: 0, availableBalance: 459000, observations: 'Carga saldo junio', date: '2026-06-30T12:00:00Z' },
     { id: 'default-luis-enrique-lagos-jun', userId: '17', userName: 'Luis Enrique', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 3107, valuePerGallon: 300, amountLoaded: 932100, redeemed: 0, availableBalance: 932100, observations: 'Carga saldo junio', date: '2026-06-30T12:00:00Z' }, 
-  ];
+      // JUNIO - CARGUES CON SALDO
+    { id: 'default-mauricio-jun-v2', userId: 'rd5', userName: 'MAURICIO QUICENO', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 190, valuePerGallon: 600, amountLoaded: 114000, redeemed: 0, availableBalance: 114000, observations: 'Nivel Impulso', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-alexander-jun-v2', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 704, valuePerGallon: 800, amountLoaded: 563200, redeemed: 0, availableBalance: 563200, observations: 'Nivel Máximo Rendimiento', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-santiago-jun-v2', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Junio', gallonsSold: 946, valuePerGallon: 800, amountLoaded: 756800, redeemed: 0, availableBalance: 756800, observations: 'Nivel Máximo Rendimiento', date: '2026-06-30T12:00:00Z' },
+
+    { id: 'default-jhonny-jun-v2', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Junio', gallonsSold: 1882, valuePerGallon: 1000, amountLoaded: 1882000, redeemed: 0, availableBalance: 1882000, observations: 'Cumple mínimo 100%', date: '2026-06-30T12:00:00Z' },
+
+    { id: 'default-alvaro-jun-v2', userId: '13', userName: 'Alvaro', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 729, valuePerGallon: 700, amountLoaded: 510300, redeemed: 0, availableBalance: 510300, observations: 'Cumplimiento 110%', date: '2026-06-30T12:00:00Z' },
+    { id: 'default-luis-enrique-lagos-jun-v2', userId: '17', userName: 'Luis Enrique', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 2577, valuePerGallon: 300, amountLoaded: 773100, redeemed: 0, availableBalance: 773100, observations: 'Coordinador ventas', date: '2026-06-30T12:00:00Z' },];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.22';
+ const APP_VERSION = '1.0.23';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
