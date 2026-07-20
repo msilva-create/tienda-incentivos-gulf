@@ -85,26 +85,16 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
     return null;
   };
 
- const handleRedeemClick = (product: Product) => {
-  if (user.balance < product.price && user.distributor !== 'CENTRAL GULF') {
-    alert('Saldo insuficiente para redimir este producto.');
-    return;
-  }
+  const handleRedeemClick = (product: Product) => {
+    if (user.balance < product.price && user.distributor !== 'CENTRAL GULF') {
+      alert('Saldo insuficiente para redimir este producto.');
+      return;
+    }
+    setConfirmingProduct(product);
+    setShowDeliveryForm(true);
+    setOrderSuccess(false);
+  };
 
-  setConfirmingProduct(product);
-  setShowDeliveryForm(true);
-  setOrderSuccess(false);
-  setDeliveryData({
-    recipientName: '',
-    contactName: '',
-    phone: '',
-    clientEmail: '',
-    city: '',
-    address: '',
-    reference: '',
-    observations: ''
-  });
-};
   const handleNextToDelivery = () => {
     setShowDeliveryForm(true);
   };
@@ -194,7 +184,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
                     <h3 className="text-xl font-black text-[#002F6C] italic uppercase">
                       {showDeliveryForm ? 'Datos de Entrega' : 'Confirmar Redención'}
                     </h3>
-                    <button onClick={() => { setConfirmingProduct(null); setShowDeliveryForm(false); }} className="text-slate-300 hover:text-slate-500 transition-colors">
+                    <button onClick={() => { setConfirmingProduct(null); setShowDeliveryForm(false); setOrderSuccess(false); }} className="text-slate-300 hover:text-slate-500 transition-colors">
                       <X size={24} />
                     </button>
                   </div>
@@ -315,16 +305,16 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
 
                       <div className="grid grid-cols-2 gap-4 pt-4">
                         <button 
-                          onClick={() => setShowDeliveryForm(false)}
+                          onClick={() => { setConfirmingProduct(null); setShowDeliveryForm(false); setOrderSuccess(false); }}
                           className="py-4 rounded-2xl bg-slate-100 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:bg-slate-200 transition-all"
                         >
-                          Atrás
+                          Cancelar
                         </button>
                         <button 
                           onClick={confirmRedemption}
                           className="py-4 rounded-2xl btn-gulf shadow-lg shadow-orange-100"
                         >
-                          Finalizar
+                          Enviar solicitud
                         </button>
                       </div>
                     </div>
