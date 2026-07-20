@@ -67,7 +67,10 @@ const App: React.FC = () => {
     { id: 'R-ramos-alexander-ahumador-jun', productId: 'b1', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-06-30T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
     { id: 'R-lagos-silvia-plancha-vapor-jun', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-silvia-licuadora-jun', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-06-30T12:00:00Z', userEmail: 'silvia@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
-  ];
+    // JULIO - REDENCIONES ADICIONALES
+    { id: 'R-servitecas-miguel-ps5-jul', productId: 'te18', productName: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000, date: '2026-07-31T12:00:00Z', userEmail: 'miguel@servitecas', distributor: 'CVC SERVITECAS' },
+    { id: 'R-lubricafe-melissa-tv32-jul', productId: 'te1', productName: 'Televisor Challenger 32" LED', price: 854280, date: '2026-07-31T12:00:00Z', userEmail: 'melissa@lubricafe', distributor: 'LUBRICAFE' },
+  ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
     { id: 'default-jhonny-feb', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 1247, valuePerGallon: 1000, amountLoaded: 1247000, redeemed: 0, availableBalance: 1247000, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
