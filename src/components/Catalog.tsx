@@ -85,14 +85,26 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
     return null;
   };
 
-  const handleRedeemClick = (product: Product) => {
-    if (user.balance < product.price && user.distributor !== 'CENTRAL GULF') {
-      alert('Saldo insuficiente para redimir este producto.');
-      return;
-    }
-    setConfirmingProduct(product);
-  };
+ const handleRedeemClick = (product: Product) => {
+  if (user.balance < product.price && user.distributor !== 'CENTRAL GULF') {
+    alert('Saldo insuficiente para redimir este producto.');
+    return;
+  }
 
+  setConfirmingProduct(product);
+  setShowDeliveryForm(true);
+  setOrderSuccess(false);
+  setDeliveryData({
+    recipientName: '',
+    contactName: '',
+    phone: '',
+    clientEmail: '',
+    city: '',
+    address: '',
+    reference: '',
+    observations: ''
+  });
+};
   const handleNextToDelivery = () => {
     setShowDeliveryForm(true);
   };
