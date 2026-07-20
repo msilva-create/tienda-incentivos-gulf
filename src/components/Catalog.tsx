@@ -166,7 +166,7 @@ const Catalog: React.FC<CatalogProps> = ({ user, wishlist, onToggleWishlist, onR
       {/* Modal Confirmación */}
       {confirmingProduct && (
 <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300 overflow-y-auto">
-          <div className="bg-white rounded-[2.5rem] w-full max-w-md max-h-[95vh] overflow-hidden shadow-2xl animate-in zoom-in duration-300 flex flex-col">
+          <div className="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in duration-300 flex flex-col">
             <div className="p-8 text-center">
               {orderSuccess ? (
                 <div className="space-y-4 animate-in zoom-in">
