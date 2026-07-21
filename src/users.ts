@@ -32,7 +32,8 @@ export const RAW_USERS: User[] = [
   { id: 'lc2', name: 'Mónica', email: 'monica@lubricafe', password: 'GulfLC02', distributor: 'LUBRICAFE', gallons: 1325, initialGallons: 341, balance: 885600, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 885600 } },
   { id: 'lc3', name: 'Melissa', email: 'melissa@lubricafe', password: 'GulfLC03', distributor: 'LUBRICAFE', gallons: 1268, initialGallons: 443, balance: 660000, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 660000 } },
   { id: 'lc4', name: 'Samuel', email: 'samuel@lubricafe', password: 'GulfLC04', distributor: 'LUBRICAFE', gallons: 3493, initialGallons: 1811, balance: 2643000, initialBalance: 1811000, role: 'COMMERCIAL', monthlyBalances: { 'Enero': 3493000 } 
-  { id: 'lc5', name: 'Eduardo Villegas', email: 'eduardo@lubricafe', password: 'GulfLC05', distributor: 'LUBRICAFE', gallons: 0, initialGallons: 0, balance: 0, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: {}},
+  { id: 'lc5', name: 'Eduardo Villegas', email: 'eduardo@lubricafe', password: 'GulfLC05', distributor: 'LUBRICAFE', gallons: 0, initialGallons: 0, balance: 0, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: {}
+  },
 
   // GRUPO MOTOR
   { id: 'gm1', name: 'DARWIN SAID CASTRO FLOREZ', email: 'darwin.grupomotor', password: 'gulf1', distributor: 'GRUPO MOTOR', gallons: 56, initialGallons: 56, balance: 0, initialBalance: 0, role: 'COMMERCIAL', monthlyBalances: {} },
