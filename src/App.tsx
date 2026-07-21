@@ -137,7 +137,7 @@ const App: React.FC = () => {
     { id: 'default-luis-enrique-lagos-jun-v2', userId: '17', userName: 'Luis Enrique', distributor: 'DISTRIBUIDORA LOS LAGOS', month: 'Junio', gallonsSold: 2577, valuePerGallon: 300, amountLoaded: 773100, redeemed: 0, availableBalance: 773100, observations: 'Coordinador ventas', date: '2026-06-30T12:00:00Z' },];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.24';
+ const APP_VERSION = '1.0.25';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
