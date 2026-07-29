@@ -70,6 +70,24 @@ const App: React.FC = () => {
     // JULIO - REDENCIONES ADICIONALES
     { id: 'R-servitecas-miguel-ps5-jul', productId: 'te18', productName: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000, date: '2026-07-31T12:00:00Z', userEmail: 'miguel@servitecas', distributor: 'CVC SERVITECAS' },
     { id: 'R-lubricafe-melissa-tv32-jul', productId: 'te1', productName: 'Televisor Challenger 32" LED', price: 854280, date: '2026-07-31T12:00:00Z', userEmail: 'melissa@lubricafe', distributor: 'LUBRICAFE' },
+     // JULIO - REDENCIONES ADICIONALES
+    { id: 'R-lubricafe-eduardo-sofa-cama-jul', productId: 'hm1', productName: 'Sofá cama', price: 850000, date: '2026-07-31T12:00:00Z', userEmail: 'eduardo@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-eduardo-plancha-vapor-jul', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-07-31T12:00:00Z', userEmail: 'eduardo@lubricafe', distributor: 'LUBRICAFE' },
+    { id: 'R-lubricafe-eduardo-bono-soporte-jul', productId: 'bp1', productName: 'Bono Éxito $30.000 + Soporte Celular Gulf', price: 50000, date: '2026-07-31T12:00:00Z', userEmail: 'eduardo@lubricafe', distributor: 'LUBRICAFE' },
+
+    { id: 'R-universal-giovanni-bateria-ollas-jul', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-bono-parlante-sc10-jul', productId: 'bp-giovanni-parlante-sc10-jul', productName: 'Bono Éxito $100.000 + Parlante Challenger SC10 Negro', price: 300000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-ahumador-jul', productId: 'b1', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-ventilador-3en1-1-jul', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-parlante-clip5-jul', productId: 'te7', productName: 'Parlante Clip 5 JBL', price: 340000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-cepillo-secador-jul', productId: 'b5', productName: 'Cepillo Secador', price: 300000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-ventilador-3en1-2-jul', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-giovanni-bono-gorra-jul', productId: 'bp2', productName: 'Bono Éxito $30.000 + Gorra GULF', price: 50000, date: '2026-07-31T12:00:00Z', userEmail: 'giovanni@universal', distributor: 'UNIVERSAL' },
+
+    { id: 'R-ramos-alexander-parlante-clip5-jul', productId: 'te7', productName: 'Parlante Clip 5 JBL', price: 340000, date: '2026-07-31T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-licuadora-jul', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-07-31T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+
+    { id: 'R-jairo-jhonjainer-samsung-a17-jul', productId: 'c-jhonjainer-a17-jul', productName: 'Celular SAMSUNG Galaxy A17 256 GB 8 GB RAM Azul', price: 1200000, date: '2026-07-31T12:00:00Z', userEmail: 'jhon.jainer@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
   ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
