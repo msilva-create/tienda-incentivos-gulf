@@ -88,6 +88,12 @@ const App: React.FC = () => {
     { id: 'R-ramos-alexander-licuadora-jul', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-07-31T12:00:00Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
 
     { id: 'R-jairo-jhonjainer-samsung-a17-jul', productId: 'c-jhonjainer-a17-jul', productName: 'Celular SAMSUNG Galaxy A17 256 GB 8 GB RAM Azul', price: 1200000, date: '2026-07-31T12:00:00Z', userEmail: 'jhon.jainer@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+     // JULIO - REDENCIONES ZAID MURGAS
+    { id: 'R-universal-zaid-licuadora-jul', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-bono-parlante-sc10-jul', productId: 'bp-zaid-parlante-sc10-jul', productName: 'Bono Éxito $100.000 + Parlante Challenger SC10 Negro', price: 300000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-bateria-ollas-jul', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-bono-audifonos-lenovo-jul', productId: 'bp-zaid-audifonos-lenovo-jul', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-vajilla-jul', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
   ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
