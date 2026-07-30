@@ -166,7 +166,7 @@ const App: React.FC = () => {
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.28';
+ const APP_VERSION = '1.0.33';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
@@ -298,7 +298,9 @@ const App: React.FC = () => {
       await fetch(SHEETS_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
         body: JSON.stringify(order),
       });
     } catch (err) {
