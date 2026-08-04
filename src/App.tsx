@@ -94,6 +94,14 @@ const App: React.FC = () => {
     { id: 'R-universal-zaid-bateria-ollas-jul', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
     { id: 'R-universal-zaid-bono-audifonos-lenovo-jul', productId: 'bp-zaid-audifonos-lenovo-jul', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
     { id: 'R-universal-zaid-vajilla-jul', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-07-31T12:00:00Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    
+        // JULIO - REDENCIONES ZAID MURGAS
+    { id: 'R-universal-zaid-lavadora-jul', productId: 'lavadora-11kg-zaid-jul', productName: 'Lavadora Carga Superior 11 kg (24lb)', price: 1300000, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+
+    // AGOSTO - REDENCIONES JUAN LOS LAGOS
+    { id: 'R-lagos-juan-bateria-ollas-ago', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-08-01T12:19:32Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-juan-audifonos-diadema-jbl-ago', productId: 'audifonos-diadema-jbl-juan-ago', productName: 'Audífonos de diadema JBL Bluetooth', price: 339000, date: '2026-08-01T12:26:08Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-juan-bono-gorra-ago', productId: 'bp2', productName: 'Bono Éxito $30.000 + Gorra GULF', price: 50000, date: '2026-08-01T12:30:07Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
   ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
