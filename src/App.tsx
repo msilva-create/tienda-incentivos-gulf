@@ -102,6 +102,11 @@ const App: React.FC = () => {
     { id: 'R-lagos-juan-bateria-ollas-ago', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-08-01T12:19:32Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-juan-audifonos-diadema-jbl-ago', productId: 'audifonos-diadema-jbl-juan-ago', productName: 'Audífonos de diadema JBL Bluetooth', price: 339000, date: '2026-08-01T12:26:08Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
     { id: 'R-lagos-juan-bono-gorra-ago', productId: 'bp2', productName: 'Bono Éxito $30.000 + Gorra GULF', price: 50000, date: '2026-08-01T12:30:07Z', userEmail: 'juan@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    
+    // JULIO - REDENCIONES ADICIONALES ZAID MURGAS
+    { id: 'R-universal-zaid-portatil-hp15-jul', productId: 'ct1', productName: 'Portátil HP 15"', price: 1978800, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-termos-bono-15und-jul', productId: 'bp-zaid-termos-bono-15und-jul', productName: 'Termo para bebidas calientes 500 ml en acero inoxidable + Bono Éxito $80.000 - 15 unidades', price: 1800000, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-zaid-bono-termo-industria-jul', productId: 'bp-zaid-termo-industria-jul', productName: 'Bono Éxito $30.000 + Termo en acero Gulf Industria', price: 80000, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
   ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
