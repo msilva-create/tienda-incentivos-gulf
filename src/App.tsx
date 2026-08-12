@@ -180,10 +180,12 @@ const App: React.FC = () => {
     { id: 'default-juandavid-ramos-jul', userId: 'rd4', userName: 'JUAN DAVID RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Julio', gallonsSold: 4923, valuePerGallon: 500, amountLoaded: 2461500, redeemed: 0, availableBalance: 2461500, observations: 'Tarifa especial autorizada', date: '2026-07-31T12:00:00Z' },
     { id: 'default-alexander-ramos-jul', userId: 'rd1', userName: 'ALEXANDER LABRADA', distributor: 'RAMOS DISTRIBUCIONES', month: 'Julio', gallonsSold: 362, valuePerGallon: 700, amountLoaded: 253400, redeemed: 0, availableBalance: 253400, observations: 'Nivel Aceleración', date: '2026-07-31T12:00:00Z' },
     { id: 'default-santiago-ramos-jul', userId: 'rd2', userName: 'SANTIAGO RAMOS', distributor: 'RAMOS DISTRIBUCIONES', month: 'Julio', gallonsSold: 7700, valuePerGallon: 500, amountLoaded: 3850000, redeemed: 0, availableBalance: 3850000, observations: 'Tarifa especial autorizada', date: '2026-07-31T12:00:00Z' },
+     // JULIO - UNIVERSAL
+    { id: 'default-jhonny-universal-jul', userId: '9', userName: 'Jhonny Stefanell', distributor: 'UNIVERSAL', month: 'Julio', gallonsSold: 1698, valuePerGallon: 1000, amountLoaded: 1698000, redeemed: 0, availableBalance: 1698000, observations: 'Cumple meta mensual - 131%', date: '2026-07-31T12:00:00Z' },
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.36';
+ const APP_VERSION = '1.0.37';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
