@@ -107,6 +107,45 @@ const App: React.FC = () => {
     { id: 'R-universal-zaid-portatil-hp15-jul', productId: 'ct1', productName: 'Portátil HP 15"', price: 1978800, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
     { id: 'R-universal-zaid-termos-bono-15und-jul', productId: 'bp-zaid-termos-bono-15und-jul', productName: 'Termo para bebidas calientes 500 ml en acero inoxidable + Bono Éxito $80.000 - 15 unidades', price: 1800000, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
     { id: 'R-universal-zaid-bono-termo-industria-jul', productId: 'bp-zaid-termo-industria-jul', productName: 'Bono Éxito $30.000 + Termo en acero Gulf Industria', price: 80000, date: '2026-07-30T11:32:19Z', userEmail: 'zaid@universal', distributor: 'UNIVERSAL' },
+     // AGOSTO - REDENCIONES DISTRIBUIDORA LOS LAGOS
+    { id: 'R-lagos-luis-lavadora-ago-1', productId: 'lavadora-11kg-luis-ago-1', productName: 'Lavadora Carga Superior 11 kg (24lb)', price: 1300000, date: '2026-08-07T14:11:40Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-ventilador-ago-1', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-08-07T14:13:32Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-lavadora-ago-2', productId: 'lavadora-11kg-luis-ago-2', productName: 'Lavadora Carga Superior 11 kg (24lb)', price: 1300000, date: '2026-08-12T10:05:07Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-ventilador-ago-2', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-08-12T10:06:31Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-alvaro-bicicleta-electrica-ago', productId: 'bicicleta-electrica-alvaro-ago', productName: 'Bicicleta Eléctrica 35kmh', price: 2900000, date: '2026-08-13T19:32:14Z', userEmail: 'alvaro@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-lavadora-ago-3', productId: 'lavadora-11kg-luis-ago-3', productName: 'Lavadora Carga Superior 11 kg (24lb)', price: 1300000, date: '2026-08-13T19:36:49Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-ventilador-ago-3', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-08-13T19:38:22Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+    { id: 'R-lagos-luis-bono-audifonos-lenovo-ago', productId: 'bp-luis-audifonos-lenovo-ago', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-08-19T13:30:44Z', userEmail: 'luis@loslagos', distributor: 'DISTRIBUIDORA LOS LAGOS' },
+
+    // AGOSTO - REDENCIONES RAMOS DISTRIBUCIONES
+    { id: 'R-ramos-alexander-bateria-ollas-ago', productId: 'hm4', productName: 'Batería de ollas', price: 240000, date: '2026-08-12T13:14:44Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-vasos-bono-ago', productId: 'bp-alexander-vasos-ago', productName: 'Bono Éxito $50.000 + Set de 6 Vasos Vidrio', price: 80000, date: '2026-08-12T13:17:03Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-santiago-ps5-ago-1', productId: 'te18', productName: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000, date: '2026-08-18T06:35:26Z', userEmail: 'santiago.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-santiago-ps5-ago-2', productId: 'te18', productName: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000, date: '2026-08-18T06:35:26Z', userEmail: 'santiago.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-juandavid-ps5-ago', productId: 'te18', productName: 'Consola PS5 Estándar 1TB HW 2115 + 1 Control inalámbrico + Juego PS5 Gran Turismo 7 Completo + Juego PS5 Astro Bot', price: 3500000, date: '2026-08-12T12:46:21Z', userEmail: 'juandavid.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-picatodo-ago', productId: 'e2', productName: 'Picatodo Negro', price: 131880, date: '2026-08-20T19:08:47Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-alexander-sanduchera-panini-ago', productId: 'e7', productName: 'Sanduchera Panini', price: 119400, date: '2026-08-20T19:11:48Z', userEmail: 'alexander.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+    { id: 'R-ramos-juandavid-portatil-hp15-ago', productId: 'ct1', productName: 'Portátil HP 15"', price: 1978800, date: '2026-08-21T12:00:00Z', userEmail: 'juandavid.ramos', distributor: 'RAMOS DISTRIBUCIONES' },
+
+    // AGOSTO - REDENCIONES MAQUINAGRO
+    { id: 'R-maquinagro-gabriel-bono-audifonos-ago-1', productId: 'bp-gabriel-audifonos-ago-1', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-08-18T21:23:05Z', userEmail: 'gabriel@maquinagro', distributor: 'MAQUINAGRO' },
+    { id: 'R-maquinagro-gabriel-bono-audifonos-ago-2', productId: 'bp-gabriel-audifonos-ago-2', productName: 'Bono Éxito $100.000 + Audífonos Lenovo GM2 Pro Inalámbrico', price: 180000, date: '2026-08-18T21:25:43Z', userEmail: 'gabriel@maquinagro', distributor: 'MAQUINAGRO' },
+
+    // AGOSTO - REDENCIONES UNIVERSAL
+    { id: 'R-universal-yerlin-ahumador-ago', productId: 'b1', productName: 'Ahumador y Asador de Barril Mediano 20 Lbs', price: 600000, date: '2026-08-21T06:47:39Z', userEmail: 'yerlin@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-yerlin-olla-electrica-ago', productId: 'e6', productName: 'Olla Eléctrica Multifunción', price: 479880, date: '2026-08-21T07:04:49Z', userEmail: 'yerlin@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-yerlin-vajilla-ago', productId: 'hm3', productName: 'Juego de vajilla 4 puestos', price: 120000, date: '2026-08-21T07:12:08Z', userEmail: 'yerlin@universal', distributor: 'UNIVERSAL' },
+    { id: 'R-universal-yerlin-vasos-bono-ago', productId: 'bp-yerlin-vasos-ago', productName: 'Bono Éxito $50.000 + Set de 6 Vasos Vidrio', price: 80000, date: '2026-08-21T07:14:09Z', userEmail: 'yerlin@universal', distributor: 'UNIVERSAL' },
+
+    // AGOSTO - REDENCIONES JAIRO SÁNCHEZ
+    { id: 'R-jairo-jhonjainer-plancha-vapor-ago', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-08-21T11:23:52Z', userEmail: 'jhon.jainer@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-george-plancha-vapor-ago', productId: 'e16', productName: 'Plancha De Vapor Ligera', price: 131880, date: '2026-08-21T11:56:11Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-george-cafetera-ago', productId: 'e10', productName: 'Cafetera Eléctrica 12 Tazas He7031a Negro', price: 180000, date: '2026-08-21T11:58:19Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-george-sanduchera-ago', productId: 'e8', productName: 'Sanduchera Eléctrica 2 Puestos', price: 96000, date: '2026-08-21T11:59:20Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-george-ventilador-ago', productId: 'e14', productName: 'Ventilador 3 en 1', price: 239880, date: '2026-08-21T12:01:41Z', userEmail: 'george.hagi@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-jaider-freidora-aire-ago', productId: 'e3', productName: 'Freidora de aire 4 Litros', price: 416280, date: '2026-08-21T14:44:30Z', userEmail: 'jaider@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-jaider-licuadora-ago', productId: 'e1', productName: 'Licuadora 6 Velocidades', price: 287880, date: '2026-08-21T14:45:35Z', userEmail: 'jaider@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
+    { id: 'R-jairo-jaider-vasos-bono-ago', productId: 'bp-jaider-vasos-ago', productName: 'Bono Éxito $50.000 + Set de 6 Vasos Vidrio', price: 80000, date: '2026-08-21T15:01:37Z', userEmail: 'jaider@jairosanchez', distributor: 'JAIRO SÁNCHEZ' },
   ]; 
   const DEFAULT_RECORDS: MonthlyRecord[] = [
     { id: 'default-giovanni-feb', userId: '7', userName: 'Giovanni Del Duca', distributor: 'UNIVERSAL', month: 'Febrero', gallonsSold: 828, valuePerGallon: 800, amountLoaded: 662400, redeemed: 0, availableBalance: 662400, observations: 'Carga mensual Febrero', date: '2026-02-28T12:00:00Z' },
@@ -185,7 +224,7 @@ const App: React.FC = () => {
   ];
   const [comprobanteData, setComprobanteData] = useState<{ item: RedeemedItem; user: User; id: string; status: string } | null>(null);
   useEffect(() => {
- const APP_VERSION = '1.0.37';
+ const APP_VERSION = '1.0.38';
     const savedVersion = localStorage.getItem('gulf_version');
     if (savedVersion !== APP_VERSION) {
       localStorage.clear();
